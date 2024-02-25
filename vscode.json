@@ -1,0 +1,111 @@
+{
+  // open json editor for settings
+  "workbench.settings.editor": "json",
+
+  // Change font
+  "editor.fontFamily": "Geist Mono",
+  "scm.inputFontFamily": "Geist Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "chat.editor.fontFamily": "Geist Mono",
+  "debug.console.fontFamily": "Geist Mono",
+  "editor.codeLensFontFamily": "Geist Mono",
+  "notebook.output.fontFamily": "Geist Mono",
+  "markdown.preview.fontFamily": "Geist Mono",
+  "editor.inlayHints.fontFamily": "Geist Mono",
+
+  // Font size
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "800",
+  "editor.lineNumbers": "relative",
+
+  // colorize
+  "colorize.languages": ["javascript", "typescript", "jsx", "tsx"],
+
+  // ui
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.location": "side",
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.horizontal": "auto",
+  "explorer.compactFolders": false,
+  "editor.tabSize": 2,
+  "editor.linkedEditing": true,
+  "breadcrumbs.filePath": "off",
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "window.zoomLevel": 1,
+  "files.autoSave": "onFocusChange",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "on",
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "expand",
+  "editor.find.cursorMoveOnType": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "terminal.integrated.defaultLocation": "editor",
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "[Default Dark+]": {
+      "enabled": true
+    }
+  },
+
+  // terminal
+  "git.openRepositoryInParentFolders": "never",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.env.linux": {},
+  "explorer.confirmDelete": false,
+  "terminal.integrated.defaultProfile.windows": "zsh",
+  "css.lint.unknownAtRules": "ignore",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "html.format.preserveNewLines": false,
+  "workbench.editor.enablePreview": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.tree.indent": 15,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#ccef05"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "terminal.integrated.env.windows": {},
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontVariations": false,
+  "git.autofetch": true,
+  "breadcrumbs.enabled": false,
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "editor.inlineSuggest.suppressSuggestions": true,
+
+  "workbench.iconTheme": "helium-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.colorTheme": "Catppuccin Mocha"
+}
