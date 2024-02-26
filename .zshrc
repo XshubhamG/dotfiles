@@ -8,7 +8,13 @@ setopt appendhistory
 setopt HIST_IGNORE_SPACE 
 setopt HIST_IGNORE_ALL_DUPS
 
+# -------------- #
+#     PATH       #
+# -------------- #    
 export PATH=$PATH:~/.local/bin
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 
 # -------------- #
 # Zstyle command #
@@ -20,8 +26,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # -------------- #
 #    Aliases     #
 # -------------- #   
-alias vi="nvim"
-alias vo="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+# alias vi="nvim"
+alias vi="neovide"
+alias vo="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs neovide"
 alias lz="lazygit"
 alias rmdir="rm -r"
 alias bat="bat"
@@ -109,7 +116,5 @@ eval "$(starship init zsh)"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
-# cargo 
-export PATH="$PATH:$HOME/.cargo/bin"
+

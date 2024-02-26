@@ -2,18 +2,19 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
   -- PERF: overrides for plugins
 
-  -- override plugin configs
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
+
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
       auto_install = true,
-    }
+    },
   },
+
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
@@ -23,6 +24,7 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
+
   -- PERF: noice.nvim
   {
     "folke/noice.nvim",
@@ -44,11 +46,11 @@ local plugins = {
           },
         },
         presets = {
-          bottom_search = false,        -- use a classic bottom cmdline for search
-          command_palette = true,       -- position the cmdline and popupmenu together
+          bottom_search = false, -- use a classic bottom cmdline for search
+          command_palette = true, -- position the cmdline and popupmenu together
           long_message_to_split = true, -- long messages will be sent to a split
-          inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-          lsp_doc_border = false,       -- add a border to hover docs and signature help
+          inc_rename = false, -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = false, -- add a border to hover docs and signature help
         },
         views = {
           popupmenu = {
@@ -74,6 +76,7 @@ local plugins = {
       }
     end,
   },
+
   -- PERF: todo-comments.nvim
   {
     "folke/todo-comments.nvim",
@@ -94,6 +97,7 @@ local plugins = {
       todoComment.setup()
     end,
   },
+
   -- PERF: lspconfig.nvim
   {
     "neovim/nvim-lspconfig",
@@ -102,19 +106,25 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
-  -- PERF: conform.nvim
-  {
-    "stevearc/conform.nvim",
-    --  for users those who want auto-save conform + lazyloading!
-    event = "BufWritePre",
-    config = function()
-      require "custom.configs.conform"
-    end,
-  },
+
+  --PERF: hyperland syntax highlighting
   {
     "theRealCarneiro/hyprland-vim-syntax",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     ft = "hypr",
+  },
+
+  --PERF: none-ls for formatting
+  {
+    "nvimtools/none-ls.nvim", -- configure formatters & linters
+    lazy = true,
+    event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
+    dependencies = {
+      "jay-babu/mason-null-ls.nvim",
+    },
+    config = function()
+      require "custom.configs.null-ls"
+    end,
   },
 }
 

@@ -2,6 +2,6 @@
 LICENSE
 README.md
 vscode.json
-zsh-plugins/
+zsh-plugins
 ^/.*/.bak
 ^/.*\.org
