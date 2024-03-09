@@ -7,15 +7,19 @@ M.ui = {
   extended_integrations = {
     "notify",
   },
+
   cmp = {},
+
   telescope = {
     style = "borderless",
   },
+
   lsp = {
     signature = {
       silent = false,
     },
   },
+
   nvdash = {
     load_on_startup = false,
     header = {

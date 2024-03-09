@@ -31,49 +31,7 @@ local plugins = {
     lazy = false,
     dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
     config = function()
-      require("noice").setup {
-        lsp = {
-          override = {
-            ["vim.lsp.util.convert_input_to_markdown_lines"] = false,
-            ["vim.lsp.util.stylize_markdown"] = false,
-            ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-          },
-          signature = {
-            enabled = false,
-          },
-          hover = {
-            enabled = false,
-          },
-        },
-        presets = {
-          bottom_search = false, -- use a classic bottom cmdline for search
-          command_palette = true, -- position the cmdline and popupmenu together
-          long_message_to_split = true, -- long messages will be sent to a split
-          inc_rename = false, -- enables an input dialog for inc-rename.nvim
-          lsp_doc_border = false, -- add a border to hover docs and signature help
-        },
-        views = {
-          popupmenu = {
-            relative = "editor",
-            backend = "cmp",
-            position = {
-              row = 16,
-              col = "50%",
-            },
-            size = {
-              width = 60,
-              height = 10,
-            },
-            border = {
-              style = "rounded",
-              padding = { 0, 1 },
-            },
-            win_options = {
-              winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
-            },
-          },
-        },
-      }
+      require "custom.configs.noice"
     end,
   },
 
@@ -117,13 +75,17 @@ local plugins = {
   --PERF: none-ls for formatting
   {
     "nvimtools/none-ls.nvim", -- configure formatters & linters
-    lazy = true,
-    event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
-    dependencies = {
-      "jay-babu/mason-null-ls.nvim",
-    },
+    event = "VeryLazy",
+    dependencies = { "jay-babu/mason-null-ls.nvim" },
     config = function()
       require "custom.configs.null-ls"
+    end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = { "javscript", "typescript", "javscriptreact", "typescriptreact", "html" },
+    config = function()
+      require("nvim-ts-autotag").setup()
     end,
   },
 }
