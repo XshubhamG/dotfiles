@@ -88,6 +88,14 @@ local plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
+  {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
 }
 
 return plugins
