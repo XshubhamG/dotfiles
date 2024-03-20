@@ -1,6 +1,6 @@
 local overrides = require "custom.configs.overrides"
 local plugins = {
-  -- PERF: overrides for plugins
+  -- NOTE: overrides for plugins
 
   {
     "williamboman/mason.nvim",
@@ -25,7 +25,7 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
-  -- PERF: noice.nvim
+  -- NOTE: noice.nvim
   {
     "folke/noice.nvim",
     lazy = false,
@@ -35,7 +35,7 @@ local plugins = {
     end,
   },
 
-  -- PERF: todo-comments.nvim
+  -- NOTE: todo-comments.nvim
   {
     "folke/todo-comments.nvim",
     lazy = false,
@@ -56,7 +56,7 @@ local plugins = {
     end,
   },
 
-  -- PERF: lspconfig.nvim
+  -- NOTE: lspconfig.nvim
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -65,14 +65,14 @@ local plugins = {
     end,
   },
 
-  --PERF: hyperland syntax highlighting
+  --NOTE: hyperland syntax highlighting
   {
     "theRealCarneiro/hyprland-vim-syntax",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     ft = "hypr",
   },
 
-  --PERF: none-ls for formatting
+  --NOTE: none-ls for formatting
   {
     "nvimtools/none-ls.nvim", -- configure formatters & linters
     event = "VeryLazy",
@@ -83,7 +83,7 @@ local plugins = {
   },
   {
     "windwp/nvim-ts-autotag",
-    ft = { "javscript", "typescript", "javscriptreact", "typescriptreact", "html" },
+    ft = { "javscript", "typescript", "javascriptreact", "typescriptreact", "html" },
     config = function()
       require("nvim-ts-autotag").setup()
     end,
