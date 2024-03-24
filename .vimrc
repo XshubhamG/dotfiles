@@ -23,34 +23,13 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
-" Detect tabstop and shiftwidth automatically
-Plug 'tpope/vim-sleuth'
-if !has('nvim')
-    Plug 'rhysd/vim-healthcheck'
-endif
-
-" NOTE: This is where your plugins related to LSP can be installed.
-"  The configuration is done below. Search for lsp to find it below.
-
-" Enable LSP
-Plug 'prabirshrestha/vim-lsp'
-" Install language servers and configure them for vim-lsp
-Plug 'mattn/vim-lsp-settings'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'rhysd/vim-healthcheck'
 
 " catppuccin
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " Useful plugin to show you pending keybinds.
 Plug 'liuchengxu/vim-which-key'
-
-" Adds git related signs to the gutter
-Plug 'airblade/vim-gitgutter'
-
-" Theme inspired by Atom
-Plug 'joshdick/onedark.vim'
 
 " Set airline as statusline
 Plug 'vim-airline/vim-airline'
@@ -198,39 +177,3 @@ nmap <leader>sf :Files<CR>
 let g:which_key_map.s.f = '[S]earch [F]iles'
 nmap <leader>sh :Helptags<CR>
 let g:which_key_map.s.h = '[S]earch [H]elp'
-
-" [[ Vsnip  ]]
-" NOTE: You can use other key to expand snippet.
-
-" Expand
-imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-
-" Expand or jump
-imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-
-" Jump forward or backward
-imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
-" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
-" See https://github.com/hrsh7th/vim-vsnip/pull/50
-nmap        s   <Plug>(vsnip-select-text)
-xmap        s   <Plug>(vsnip-select-text)
-nmap        S   <Plug>(vsnip-cut-text)
-xmap        S   <Plug>(vsnip-cut-text)
-
-" If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
-let g:vsnip_filetypes = {}
-let g:vsnip_filetypes.javascriptreact = ['javascript']
-let g:vsnip_filetypes.typescriptreact = ['typescript']
-
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() . "\<cr>" : "\<cr>"
-
-" [[ Configure LSP ]]
-
