@@ -5,3 +5,4 @@ vscode.json
 zsh-plugins
 ^/.*/.bak
 ^/.*\.org
+.vimrc

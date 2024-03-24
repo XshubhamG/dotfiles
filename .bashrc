@@ -32,7 +32,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# Aliases 
+# Aliases
 alias vi="nvim"
 alias lz="lazygit"
 alias rmdir="rm -r"
