@@ -30,10 +30,11 @@ vim.api.nvim_set_keymap("v", "<C-v>", "<C-R>*", { noremap = true, silent = true 
 vim.g.codeium_no_map_tab = 1
 
 -- Options
-local opt = vim.opt -- for conciseness
+local opt = vim.opt -- for conscisenes
 
 -- line numbers
 opt.relativenumber = true
+opt.shiftwidth = 2
 opt.number = true
 opt.colorcolumn = "100"
 opt.guifont = "JetBrainsMono Nerd Font"

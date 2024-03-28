@@ -8,10 +8,19 @@ M.ui = {
     "notify",
   },
 
-  cmp = {},
+  cmp = {
+    style = "flat_dark", -- default/flat_light/flat_dark/atom/atom_colored
+  },
 
   telescope = {
-    style = "borderless",
+    style = "bordered",
+  },
+
+  statusline = {
+    theme = "minimal", -- default/vscode/vscode_colored/minimal
+    -- default/round/block/arrow separators work only for default statusline theme
+    -- round and block will work for minimal theme only
+    separator_style = "default",
   },
 
   lsp = {

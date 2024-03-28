@@ -52,6 +52,11 @@ alias tmux-attach="tmux attach -t"
 
 # git alias
 alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gp="git push"
+alias gl="git log"
 
 # Changing "ls" to "exa"
 alias ls='exa --icons --color=always --group-directories-first'
