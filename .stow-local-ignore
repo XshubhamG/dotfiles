@@ -1,0 +1,8 @@
+\.git
+LICENSE
+README.md
+vscode.json
+zsh-plugins
+^/.*/.bak
+^/.*\.org
+.vimrc
