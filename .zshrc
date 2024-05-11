@@ -13,6 +13,7 @@ setopt HIST_IGNORE_ALL_DUPS
 # -------------- #    
 export PATH=$PATH:~/.local/bin
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/go/bin"
 export MANPAGER='nvim +Man!'
 export VISUAL=nvim
 export EDITOR=nvim
@@ -84,7 +85,8 @@ alias lt="exa -aT --icons --color=always --level=2"
 # ------------ #
 alias fetch='fm6000 -c "random"' 
 # fetch -m 8 -g 12 -l 23 -dog
-neofetch
+# neofetch
+fastfetch
 
 # ------------- #
 #     FZF       #

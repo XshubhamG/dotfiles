@@ -6,7 +6,7 @@
 }
 {
     "label" : "logout",
-    "action" : "hyprctl dispatch exit 0",
+    "action" : "~/dotfiles/.config/hypr/scripts/exit.sh",
     "text" : "Logout",
     "keybind" : "e"
 }
@@ -24,7 +24,7 @@
 }
 {
     "label" : "sleep",
-    "action" : "",
+    "action" : "sleep 1; systemctl hibernate",
     "text" : "Sleep",
     "keybind" : "h"
 }
