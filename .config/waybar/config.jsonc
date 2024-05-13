@@ -8,7 +8,7 @@
     "hyprland/workspaces",
     "custom/notifications",
   ],
-  "modules-center": ["clock"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "tray",
     "memory",
@@ -24,6 +24,14 @@
     "icon-theme": "WhiteSur",
     "icon-size": 25,
     "tooltip-format": "{title}",
+  },
+  "hyprland/window": {
+    "format": " {}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": " $1",
+      "(.*) - fish": " [$1]",
+    },
+    "separate-outputs": true,
   },
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -72,13 +80,12 @@
     "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "~/.config/rofi/wifi/wifi.sh &",
-    "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
+    "on-click": "nm-applet",
     "interval": 5,
     "nospacing": 1,
   },
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{icon} {volume}%",
     "format-bluetooth": "󰂰 ",
     "nospacing": 1,
     "tooltip-format": "Volume : {volume}%",
@@ -91,7 +98,7 @@
     "scroll-step": 1,
   },
   "custom/logo": {
-    "format": "  ",
+    "format": " ",
     "tooltip": false,
     "on-click": "exec wofi --show drun",
   },
@@ -110,7 +117,7 @@
     "tooltip": false,
   },
   "custom/power": {
-    "format": " 󰤆 ",
+    "format": "󰤆 ",
     "tooltip": false,
     "on-click": "exec wlogout",
   },

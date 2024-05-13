@@ -16,6 +16,17 @@ window#waybar.hidden {
   opacity: 0.5;
 }
 
+#window {
+  background-color: #f9e2af;
+  color: #181825;
+  font-family: JetBrainsMono Nerd Font;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 18px;
+  margin: 6px 3px;
+  border-radius: 4px;
+}
+
 #workspaces {
   background-color: transparent;
 }
