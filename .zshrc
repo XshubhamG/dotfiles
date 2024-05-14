@@ -73,7 +73,7 @@ alias lt="exa -aT --icons --color=always --level=2"
 # ----------- #
 #   thefuck   #
 # ----------- #
-# eval $(thefuck --alias)
+eval $(thefuck --alias)
 
 # ------------- #
 # colorscript   #
