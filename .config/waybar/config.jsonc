@@ -7,10 +7,12 @@
     "custom/logo",
     "hyprland/workspaces",
     "custom/notifications",
+    "wlr/taskbar",
   ],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "tray",
+    "bluetooth",
     "memory",
     "network",
     "pulseaudio",
@@ -63,6 +65,13 @@
     "format": "󰍛 {}%",
     "max-length": 10,
   },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "󰂲 {status}", // an empty format will hide the module
+    "on-click": "blueman-manager",
+    "format-connected": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+  },
   "tray": {
     "spacing": 10,
   },
@@ -86,7 +95,7 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-bluetooth": "󰂰 ",
+    "format-bluetooth": "󰂰 {volume}%",
     "nospacing": 1,
     "tooltip-format": "Volume : {volume}%",
     "format-muted": "󰝟 ",

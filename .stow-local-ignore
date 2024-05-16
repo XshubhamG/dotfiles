@@ -1,4 +1,6 @@
 \.git
+\.gitignore
+\.stow-local-ignore
 LICENSE
 README.md
 vscode.json

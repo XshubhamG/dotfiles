@@ -68,7 +68,8 @@ window#waybar.hidden {
 #pulseaudio,
 #network,
 #clock,
-#tray {
+#tray,
+#bluetooth {
   border-radius: 4px;
   margin: 6px 3px;
   margin-bottom: 3px;
@@ -95,6 +96,10 @@ window#waybar.hidden {
 
 #memory {
   background-color: #fab387;
+}
+
+#bluetooth {
+  background-color: #89b4fa;
 }
 
 #battery {
