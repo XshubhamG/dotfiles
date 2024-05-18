@@ -1,16 +1,57 @@
 # --------------- #
+# Plugin manager  #
+# --------------- #
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Source zinit
+source "${ZINIT_HOME}/zinit.zsh"
+zinit cdreplay -q
+
+# -------------- #
+#     Plugins    #
+# -------------- #
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light Aloxaf/fzf-tab
+source ~/.zcolors
+
+# --------------- #
 # presist history #
 # --------------- #
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+HISTDUP=erase
 setopt appendhistory
-setopt HIST_IGNORE_SPACE 
+setopt sharehistory
+setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+
+# -------------- #
+# Zstyle command #
+# -------------- #
+# setopt no_list_ambiguous
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -T --icons --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -T --icons --color=always $realpath'
+zstyle ':fzf-tab:*' fzf-bindings 'space:accept'
 
 # -------------- #
 #     PATH       #
-# -------------- #    
+# -------------- #
 export PATH=$PATH:~/.local/bin
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/go/bin"
@@ -19,15 +60,8 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # -------------- #
-# Zstyle command #
-# -------------- #
-setopt no_list_ambiguous
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
-# -------------- #
 #    Aliases     #
-# -------------- #   
+# -------------- #
 # alias vi="nvim"
 alias vi="neovide"
 alias vo="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
@@ -37,7 +71,7 @@ alias rmdir="rm -r"
 alias ncdu="ncdu --color dark"
 # alias bat="bat --theme Dracula"
 alias j="autojump"
-alias cd="z"
+# alias cd="z"
 alias omp="oh-my-posh"
 alias tmux="tmux -u"
 alias printalias="alias | fzf"
@@ -81,9 +115,9 @@ eval $(thefuck --alias)
 # colorscript -r
 
 # ------------ #
-#   fm6000     #
+#  info-fetch  #
 # ------------ #
-alias fetch='fm6000 -c "random"' 
+alias fetch='fm6000 -c "random"'
 # fetch -m 8 -g 12 -l 23 -dog
 # neofetch
 fastfetch
@@ -118,14 +152,6 @@ export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,target --preview 'eza -T 
 # setup fzf
 [ -f ~/dotfiles/fzf/.fzf.zsh ] && source ~/dotfiles/fzf/.fzf.zsh
 
-# -------------- #
-#     Plugins    #
-# -------------- #
-source ~/dotfiles/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/dotfiles/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh-plugins/zcolors/zcolors.plugin.zsh
-source ~/.zcolors 
-
 # --------------- #
 # starship prompt #
 # --------------- #
@@ -139,7 +165,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
-# vi mode
-bindkey -v
+# keybinds
+bindkey -e
+bindkey "^p" history-search-backward
+bindkey "^n" history-search-forward
