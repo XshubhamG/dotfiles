@@ -1,3 +1,5 @@
+require "nvchad.mappings"
+
 -- Keymaps
 local keymap = vim.keymap -- for consciseness
 
@@ -11,7 +13,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlight" })
 
 keymap.set("n", "<leader>fe", ":Telescope file_browser<CR>")
 
-keymap.set("i", "qq", "<ESC>")
+keymap.set("i", "jk", "<ESC>")
 
 keymap.set("i", "<C-g>", function()
   return vim.fn["codeium#Accept"]()
@@ -28,24 +30,3 @@ if vim.g.neovide then
 end
 
 vim.g.codeium_no_map_tab = 1
-
--- Options
-local opt = vim.opt -- for conscisenes
-
--- line numbers
-opt.relativenumber = true
-opt.shiftwidth = 2
-opt.number = true
-opt.colorcolumn = "100"
-opt.guifont = "JetBrainsMono Nerd Font:h13"
-opt.list = true
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
--- Highlight when yanking (copying) text
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})

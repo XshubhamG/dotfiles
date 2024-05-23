@@ -1,6 +1,4 @@
-local M = {}
-
-M.treesitter = {
+local options = {
   ensure_installed = {
     "vim",
     "lua",
@@ -48,53 +46,4 @@ M.treesitter = {
   },
 }
 
-M.mason = {
-  ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
-
-    -- web dev stuff
-    "tailwindcss-language-server",
-    "typescript-language-server",
-    "prettier",
-
-    -- python
-    "black",
-
-    -- go
-    "gopls",
-    "golangci-lint",
-
-    -- c/cpp stuff
-    "clangd",
-    "clang-format",
-
-    -- shell stuff
-    "shfmt",
-  },
-}
-
--- git support in nvimtree
-M.nvimtree = {
-  git = {
-    enable = true,
-  },
-
-  renderer = {
-    highlight_git = true,
-    icons = {
-      show = {
-        git = true,
-      },
-    },
-  },
-}
-
-M.colorizer = {
-  filetypes = { "*" },
-  user_default_options = {
-    tailwind = true,
-  },
-}
-return M
+return options

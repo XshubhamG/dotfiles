@@ -4,6 +4,12 @@ local M = {}
 
 M.ui = {
   theme = "catppuccin",
+
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
+
   extended_integrations = {
     "notify",
   },
@@ -50,7 +56,5 @@ M.ui = {
     },
   },
 }
-M.plugins = "custom.plugins"
 
-M.mappings = require "custom.mappings"
 return M
