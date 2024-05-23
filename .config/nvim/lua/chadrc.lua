@@ -12,6 +12,7 @@ M.ui = {
 
   extended_integrations = {
     "notify",
+    "todo",
   },
 
   cmp = {

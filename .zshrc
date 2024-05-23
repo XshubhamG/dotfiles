@@ -11,7 +11,6 @@ fi
 
 # Source zinit
 source "${ZINIT_HOME}/zinit.zsh"
-zinit cdreplay -q
 
 # -------------- #
 #     Plugins    #
@@ -48,6 +47,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -T --icons --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -T --icons --color=always $realpath'
 zstyle ':fzf-tab:*' fzf-bindings 'space:accept'
+zinit cdreplay -q
 
 # -------------- #
 #     PATH       #
@@ -132,14 +132,6 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#73daca,info:#cba6f7,pointer:#e0af68 \
 --color=marker:#7dcfff,fg+:#cdd6f4,prompt:#cba6f7,hl+:#73daca --height=50% --border --prompt '∷ ' --pointer » --marker ⇒"
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git --exclude node_modules --strip-cwd-prefix"
-
-# VSCode extension FindItFaster
-if [[ $FIND_IT_FASTER_ACTIVE -eq 1 ]]; then
-  FZF_DEFAULT_OPTS=" \
---color=bg+:#1e1e2e,spinner:#7dcfff,hl:#73daca \
---color=fg:#cdd6f4,header:#73daca,info:#cba6f7,pointer:#e0af68 \
---color=marker:#7dcfff,fg+:#cdd6f4,prompt:#cba6f7,hl+:#73daca --height=100% --border --prompt '∷ ' --pointer » --marker ⇒"
-fi
 
 # Ctrl-T command
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

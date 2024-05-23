@@ -11,7 +11,7 @@ keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss noice m
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlight" })
 
-keymap.set("n", "<leader>fe", ":Telescope file_browser<CR>")
+keymap.set("n", "<leader>fm", ":lua vim.lsp.buf.format()<CR>", { desc = "Format file" })
 
 keymap.set("i", "jk", "<ESC>")
 
@@ -28,5 +28,3 @@ if vim.g.neovide then
   keymap.set("c", "<C-v>", "<C-R>+") -- Paste command mode
   keymap.set("i", "<C-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
-
-vim.g.codeium_no_map_tab = 1

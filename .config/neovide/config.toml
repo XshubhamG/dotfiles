@@ -1,0 +1,9 @@
+[font]
+  normal = ["JetBrainsMono Nerd Font"]
+  bold = ["JetBrainsMono Nerd Font"]
+  italic = ["JetBrainsMono Nerd Font"]
+  bold-italic = ["JetBrainsMono Nerd Font"]
+  size = 14.0
+
+fork = false
+frame = "full"
