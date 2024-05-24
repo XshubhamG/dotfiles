@@ -8,6 +8,8 @@ M.ui = {
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
+    ["@keyword"] = { italic = true },
+    ["@operator"] = { italic = true },
   },
 
   extended_integrations = {
