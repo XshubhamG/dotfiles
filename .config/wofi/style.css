@@ -4,7 +4,7 @@
 window {
   margin: 2px;
   border: 2px solid;
-  border-color: #313244;
+  border: 4px solid #94e2d5;
   background-color: #1e1e2e;
   border-radius: 10px;
   font-family: JetBrainsMono Nerd Font;
@@ -18,7 +18,7 @@ window {
   margin-bottom: 8px;
   border: none;
   color: @foreground;
-  background-color: #313244;
+  background-color: #181825;
   outline: none;
 }
 
@@ -46,7 +46,7 @@ window {
 }
 
 #text:selected {
-  color: @foreground;
+  color: #181825;
   border: none;
   border-radius: 8px;
 }
@@ -62,5 +62,6 @@ window {
   margin: 0px 0px;
   border: none;
   border-radius: 8px;
-  background-color: #585b70;
+  color: #181825;
+  background-color: #94e2d5;
 }

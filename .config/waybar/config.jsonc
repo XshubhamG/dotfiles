@@ -1,33 +1,23 @@
 {
   "layer": "top",
   "position": "top",
-  "spacing": 0,
+  "spacing": 4,
   "height": 28,
-  "modules-left": [
-    "custom/logo",
-    "hyprland/workspaces",
-    "custom/notifications",
-  ],
-  "modules-center": ["hyprland/window"],
+  "modules-left": ["hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "tray",
     "bluetooth",
+    "brightness",
     "memory",
     "network",
     "pulseaudio",
     "battery",
     "custom/power",
   ],
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "on-click-right": "fullscreen",
-    "icon-theme": "WhiteSur",
-    "icon-size": 18,
-    "tooltip-format": "{title}",
-  },
+
   "hyprland/window": {
-    "format": " {}",
+    "format": "➡ {}",
     "rewrite": {
       "(.*) — Mozilla Firefox": " $1",
       "(.*) — Brave": " $1",
@@ -35,6 +25,7 @@
     },
     "separate-outputs": true,
   },
+
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
@@ -60,44 +51,46 @@
       "5": [],
     },
   },
+
   "memory": {
     "interval": 5,
     "format": "󰍛 {}%",
     "max-length": 10,
+    "tooltip": false,
   },
+
   "bluetooth": {
     "format": " {status}",
     "format-disabled": "󰂲 {status}", // an empty format will hide the module
     "on-click": "blueman-manager",
     "format-connected": " {device_alias} {device_battery_percentage}%",
-    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip": false,
   },
+
   "tray": {
     "spacing": 10,
   },
+
   "clock": {
     "tooltip-format": "{calendar}",
     "format-alt": "  {:%a, %d %b %Y}",
     "format": "  {:%I:%M %p}",
   },
+
   "network": {
     "format-wifi": "{icon} {essid}",
     "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
     "format-ethernet": "󰀂 ",
-    "format-alt": "󱛇 ",
-    "format-disconnected": "󰖪 ",
-    "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-disconnected": "Disconnected",
+    "format-disconnected": "󰖪  {ifname}",
     "on-click": "nm-applet",
     "interval": 5,
     "nospacing": 1,
   },
+
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "󰂰 {volume}%",
     "nospacing": 1,
-    "tooltip-format": "Volume : {volume}%",
     "format-muted": "󰝟 ",
     "format-icons": {
       "headphone": " ",
@@ -105,12 +98,15 @@
     },
     "on-click": "pavucontrol -t 3",
     "scroll-step": 1,
+    "tooltip": false,
   },
+
   "custom/logo": {
     "format": " ",
     "tooltip": false,
     "on-click": "exec wofi --show drun",
   },
+
   "battery": {
     "format": "{capacity}% {icon}",
     "format-icons": {
@@ -125,11 +121,13 @@
     },
     "tooltip": false,
   },
+
   "custom/power": {
     "format": "󰤆 ",
     "tooltip": false,
     "on-click": "exec wlogout",
   },
+
   "custom/notifications": {
     "format": "{icon} {}",
     "format-icons": ["  ", "  "],

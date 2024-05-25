@@ -197,7 +197,7 @@ vimcmd_replace_symbol = '[](bold fg:purple)'
 vimcmd_visual_symbol = '[](bold fg:lavender)'
 
 [battery]
-full_symbol = "🔋"
+full_symbol = " "
 charging_symbol = "⚡️"
 discharging_symbol = "󰂃 "
 

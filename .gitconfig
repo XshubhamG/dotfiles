@@ -1,0 +1,33 @@
+[user]
+	name = Shubham Giri
+	email = shubhammgiri3@gmail.com
+[init]
+	defaultBranch = main
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow normal
+  local = cyan normal
+  remote = green normal
+  tracking = magenta normal
+[color "status"]
+  added = cyan normal
+  changed = yellow normal
+  untracked = magenta normal
+  ignored = white normal
+  conflicted = magenta normal
+[color "diff-highlight"]
+  oldNormal = red normal
+  oldHighlight = red bold
+  newNormal = cyan normal
+  newHighlight = green bold
+[color "diff"]
+  meta = yellow normal
+  frag = magenta normal
+  old = red normal
+  new = cyan normal
+[diff]
+	colorMoved = zebra
+  tool = nvimdiff
+[core]
+	editor = nvim

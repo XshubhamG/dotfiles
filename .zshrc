@@ -112,7 +112,7 @@ eval $(thefuck --alias)
 # ------------- #
 # colorscript   #
 # ------------- #
-# colorscript -r
+colorscript -r
 
 # ------------ #
 #  info-fetch  #
@@ -120,7 +120,7 @@ eval $(thefuck --alias)
 alias fetch='fm6000 -c "random"'
 # fetch -m 8 -g 12 -l 23 -dog
 # neofetch
-fastfetch
+# fastfetch
 
 # ------------- #
 #     FZF       #
