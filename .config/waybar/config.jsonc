@@ -1,6 +1,9 @@
 {
   "layer": "top",
   "position": "top",
+  "margin-top": 5,
+  "margin-left": 5,
+  "margin-right": 5,
   "spacing": 4,
   "height": 28,
   "modules-left": ["hyprland/window"],

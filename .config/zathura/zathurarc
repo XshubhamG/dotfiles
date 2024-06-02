@@ -9,6 +9,7 @@ set statusbar-v-padding 5
 set statusbar-home-tilde true
 set selection-clipboard clipboard
 set window-title-home-tilde true
+set database sqlite
 
 # Keybindings
 map p print

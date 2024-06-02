@@ -1,9 +1,8 @@
-lastupdatecheck: 0
+lastupdatecheck: 1716654965
 recentrepos:
-- /home/shubham/Content-writing
-- /home/shubham/dotfiles
+    - /home/shubham/dotfiles
 startuppopupversion: 5
-lastversion: 0.41.0
+lastversion: 0.42.0
 customcommandshistory: []
 hidecommandlog: false
 ignorewhitespaceindiffview: false

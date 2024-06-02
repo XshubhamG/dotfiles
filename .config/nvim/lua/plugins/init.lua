@@ -29,6 +29,7 @@ return {
     },
   },
 
+  --NOTE: nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
@@ -36,16 +37,20 @@ return {
     end,
   },
 
+  --NOTE: nvim-tree.nvim
   {
     "nvim-tree/nvim-tree.lua",
     opts = {},
   },
+
+  --NOTE: nvim-colorizer.nvim
   {
     "NvChad/nvim-colorizer.lua",
     opts = function()
       return require "configs.colorizer"
     end,
   },
+
   -- NOTE: noice.nvim
   {
     "folke/noice.nvim",
@@ -133,8 +138,9 @@ return {
   {
     "tris203/precognition.nvim",
     event = "VeryLazy",
-    config = function()
-      require("precognition").setup()
+    opts = {},
+    config = function(_, opts)
+      require("precognition").setup(opts)
     end,
   },
 }

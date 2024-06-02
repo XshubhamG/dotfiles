@@ -69,9 +69,7 @@ alias tldr="tldr --list | fzf-tmux --preview 'tldr {1} --color=always' --preview
 alias lz="lazygit"
 alias rmdir="rm -r"
 alias ncdu="ncdu --color dark"
-# alias bat="bat --theme Dracula"
-alias j="autojump"
-# alias cd="z"
+alias rr="ranger"
 alias omp="oh-my-posh"
 alias tmux="tmux -u"
 alias printalias="alias | fzf"
@@ -112,7 +110,7 @@ eval $(thefuck --alias)
 # ------------- #
 # colorscript   #
 # ------------- #
-colorscript -r
+# colorscript -r
 
 # ------------ #
 #  info-fetch  #
