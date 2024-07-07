@@ -4,6 +4,7 @@ local M = {}
 
 M.ui = {
   theme = "catppuccin",
+  -- theme_toggle = { "catppuccin" },
 
   hl_override = {
     Comment = { italic = true },
@@ -12,13 +13,15 @@ M.ui = {
     ["@operator"] = { italic = true },
   },
 
-  extended_integrations = {
-    "notify",
-    "todo",
-  },
-
   cmp = {
     style = "flat_dark", -- default/flat_light/flat_dark/atom/atom_colored
+  },
+
+  tabufline = {
+    enabled = true,
+    lazyload = true,
+    order = { "treeOffset", "buffers", "tabs", "btns" },
+    modules = nil,
   },
 
   telescope = {
@@ -57,6 +60,15 @@ M.ui = {
       [[                                                                       ]],
       [[                                                                       ]],
     },
+  },
+}
+
+M.base46 = {
+  integrations = {
+    "notify",
+    "todo",
+    "bufferline",
+    "alpha",
   },
 }
 
