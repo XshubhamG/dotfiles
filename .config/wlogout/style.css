@@ -2,70 +2,68 @@
   background-image: none;
 }
 window {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 12pt;
+  color: #cdd6f4;
   background-color: rgba(17, 17, 27, 0.7);
-  font-family: 'JetBrainsMono Nerd Font';
 }
+
 button {
-  color: #ffffff;
-  background-color: #11111b;
-  border: 2px solid #89b4fa;
-  border-radius: 10px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 25%;
+  background-size: 50%;
+  border: none;
+  color: #fbf1c7;
+  text-shadow: none;
+  border-radius: 20px 20px 20px 20px;
+  background-color: rgba(1, 121, 111, 0);
   margin: 5px;
-  font-size: 22px;
-}
-
-button:focus,
-button:active {
-  background-color: #89b4fa;
-  color: #000;
-  outline-style: none;
-}
-
-button:hover {
-  background-color: #89b4fa;
+  transition:
+    box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }
 
 #lock {
   background-image: url('./icons/lock.png');
 }
-#lock:focus {
+#lock:focus,
+#lock:hover {
   background-image: url('./icons/lock-hover.png');
+  background-color: #6da977;
 }
 
 #logout {
   background-image: url('./icons/logout.png');
 }
-#logout:focus {
+#logout:focus,
+#logout:hover {
   background-image: url('./icons/logout-hover.png');
+  background-color: #e7625c;
 }
 
 #suspend {
-  background-image: url('./icons/suspend.png');
+  background-image: url('./icons/sleep.png');
 }
-#suspend:focus {
+#suspend:focus,
+#suspend:hover {
   background-image: url('./icons/sleep-hover.png');
+  background-color: #59a298;
 }
 
 #shutdown {
   background-image: url('./icons/power.png');
 }
-#shutdown:focus {
+#shutdown:focus,
+#shutdown:hover {
   background-image: url('./icons/power-hover.png');
-}
-
-#sleep {
-  background-image: url('./icons/sleep.png');
-}
-#sleep:focus {
-  background-image: url('./icons/sleep-hover.png');
+  background-color: #e88146;
 }
 
 #reboot {
   background-image: url('./icons/restart.png');
 }
-#reboot:focus {
+#reboot:focus,
+#reboot:hover {
   background-image: url('./icons/restart-hover.png');
+  background-color: #d97f91;
 }

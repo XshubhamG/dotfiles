@@ -122,7 +122,7 @@
   "custom/power": {
     "format": "󰤆 ",
     "tooltip": false,
-    "on-click": "exec wlogout",
+    "on-click": "exec wlogout -b 5",
   },
 
   "custom/notifications": {
