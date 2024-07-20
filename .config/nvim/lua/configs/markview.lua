@@ -55,5 +55,9 @@ require("markview").setup {
       text = "✖",
       hl = "red",
     },
+    pending = {
+      text = "●",
+      hl = "orange",
+    },
   },
 }

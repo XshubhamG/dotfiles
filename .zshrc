@@ -9,6 +9,20 @@ if [ ! -d "$ZINIT_HOME" ]; then
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+# XDG_PATHS
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
+export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
+export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
+export CARGO_HOME=${CARGO_HOME:="$XDG_DATA_HOME/cargo"}
+export DOCKER_CONFIG=${DOCKER_CONFIG:="$XDG_CONFIG_HOME/docker"}
+export GOPATH=${GOPATH:="$XDG_DATA_HOME/go"}
+export NB_DIR=${NB_DIR:="$XDG_DATA_HOME/nb"}
+export NBRC_PATH=${NBRC_PATH:="$XDG_CONFIG_HOME/nbrc"}
+export GTK2_RC_FILES=${GTK2_RC_FILES:="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"}
+export PASSWORD_STORE_DIR=${PASSWORD_STORE_DIR:="$XDG_DATA_HOME/pass"}
+export GNUPGHOME=${GNUPGHOME:="$XDG_DATA_HOME/gnupg"}
+
 # Source zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -82,6 +96,8 @@ alias bashconfig="vi ~/dotfiles/.bashrc"
 alias dotfiles="vi ~/dotfiles"
 alias alaconfig="vi ~/dotfiles/.config/alacritty/alacritty.yml"
 alias tmuxconfig="vi ~/dotfiles/.config/tmux/tmux.conf"
+alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 
 # tmux alias
 alias tmux-attach="tmux attach -t"

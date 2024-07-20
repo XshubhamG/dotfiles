@@ -11,10 +11,9 @@
   "modules-right": [
     "tray",
     "bluetooth",
-    "brightness",
     "memory",
     "network",
-    "pulseaudio",
+    "backlight",
     "battery",
     "custom/power",
   ],
@@ -27,6 +26,12 @@
       "(.*) - zsh": " [$1]",
     },
     "separate-outputs": true,
+  },
+
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
 
   "hyprland/workspaces": {
