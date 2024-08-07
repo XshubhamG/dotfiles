@@ -40,7 +40,9 @@ return {
   --NOTE: nvim-tree.nvim
   {
     "nvim-tree/nvim-tree.lua",
-    opts = {},
+    opts = function()
+      return require "configs.nvimtree"
+    end,
   },
 
   --NOTE: nvim-colorizer.nvim
@@ -155,6 +157,36 @@ return {
     },
     config = function()
       require "configs.markview"
+    end,
+  },
+
+  {
+    "OXY2DEV/helpview.nvim",
+    lazy = false, -- Recommended
+    ft = "help",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      -- require("helpview.extras.h").init();
+      require("helpview.extras.gO").init()
+      -- gO.hijak()
+
+      require("helpview").setup {
+        options = {
+          on_enable = function(window, buffer)
+            -- vim.wo[window].statuscolumn = "  ";
+            vim.wo[window].sidescrolloff = 0
+
+            if vim.bo[buffer].modifiable == true then
+              vim.wo[window].colorcolumn = "+1"
+            end
+
+            -- require("helpview.extras.column").set(window,buffer);
+            require("helpview.extras.gO").keymap(window, buffer)
+          end,
+        },
+      }
     end,
   },
 }

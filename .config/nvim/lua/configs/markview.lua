@@ -1,6 +1,6 @@
 require("markview").setup {
 
-  buf_ignore = { "nofile" },
+  buf_ignore = {},
   modes = { "n", "v", "i" },
 
   -- Returns the conceallevel to the global value when changing modes
@@ -20,44 +20,5 @@ require("markview").setup {
     pad_char = " ",
     position = "inline",
     sign = true,
-  },
-
-  -- block quotes
-  block_quotes = {
-    enable = true,
-    default = { border = "▋", hl = "green" },
-
-    callouts = {
-      {
-        match_string = "SUCCESS",
-        aliases = { "CHECK", "DONE" },
-
-        border = "▋",
-        border_hl = "green",
-
-        callout_preview = "✓ Success",
-        callout_preview_hl = "green",
-
-        custom_title = true,
-        custom_icon = "✓ ",
-      },
-    },
-  },
-
-  checkboxes = {
-    enable = true,
-
-    checked = {
-      text = "✔",
-      hl = "green",
-    },
-    unchecked = {
-      text = "✖",
-      hl = "red",
-    },
-    pending = {
-      text = "●",
-      hl = "orange",
-    },
   },
 }

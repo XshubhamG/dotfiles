@@ -20,8 +20,8 @@ export GOPATH=${GOPATH:="$XDG_DATA_HOME/go"}
 export NB_DIR=${NB_DIR:="$XDG_DATA_HOME/nb"}
 export NBRC_PATH=${NBRC_PATH:="$XDG_CONFIG_HOME/nbrc"}
 export GTK2_RC_FILES=${GTK2_RC_FILES:="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"}
-export PASSWORD_STORE_DIR=${PASSWORD_STORE_DIR:="$XDG_DATA_HOME/pass"}
-export GNUPGHOME=${GNUPGHOME:="$XDG_DATA_HOME/gnupg"}
+# export PASSWORD_STORE_DIR=${PASSWORD_STORE_DIR:="$XDG_DATA_HOME/pass"}
+# export GNUPGHOME=${GNUPGHOME:="$XDG_DATA_HOME/gnupg"}
 
 # Source zinit
 source "${ZINIT_HOME}/zinit.zsh"
@@ -88,6 +88,7 @@ alias omp="oh-my-posh"
 alias tmux="tmux -u"
 alias printalias="alias | fzf"
 alias printenv="printenv | fzf"
+alias fastfetch="pokeget random --hide-name | fastfetch --file -"
 
 # config files
 alias vconfig="vi ~/dotfiles/.config/nvim/"
@@ -134,7 +135,7 @@ eval $(thefuck --alias)
 alias fetch='fm6000 -c "random"'
 # fetch -m 8 -g 12 -l 23 -dog
 # neofetch
-# fastfetch
+fastfetch
 
 # ------------- #
 #     FZF       #

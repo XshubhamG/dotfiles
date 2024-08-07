@@ -13,7 +13,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlight" })
 
 keymap.set("n", "<leader>fm", ":lua vim.lsp.buf.format()<CR>", { desc = "Format file" })
 
-keymap.set("i", "jk", "<ESC>")
+keymap.set("i", "jj", "<ESC>")
 
 keymap.set("i", "<C-g>", function()
   return vim.fn["codeium#Accept"]()
