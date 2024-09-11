@@ -1,0 +1,76 @@
+[user]
+	name = Shubham Giri
+	email = shubhammgiri3@gmail.com
+[init]
+	defaultBranch = main
+[color]
+  ui = auto
+[color "branch"]
+	current = 6 normal reverse
+	local = 6 normal
+	remote = 5 normal
+  tracking = magenta normal
+	plain = 6 normal
+	upstream = 5 normal
+[color "status"]
+	added = 10 normal
+	changed = 11 normal
+	untracked = normal dim
+  ignored = white normal
+  conflicted = magenta normal
+	branch = 6 normal
+	updated = 10 normal
+	localbranch = 6 normal
+	header = normal
+	remotebranch = 5 normal
+	nobranch = 1 normal italic
+	unmerged = 9 normal
+[color "diff-highlight"]
+  oldNormal = red normal
+  oldHighlight = red bold
+  newNormal = cyan normal
+  newHighlight = green bold
+[color "diff"]
+	meta = normal dim
+	frag = normal dim
+	old = 7 1
+	new = 15 2
+	commit = 3 normal
+	newMoved = 15 3
+	oldMovedAlternativeDimmed = 7 5 dim
+	oldMovedAlternative = 7 5
+	contextBold = normal bold
+	newBold = 15 2 bold
+	context = normal
+	oldMoved = 7 3
+	oldBold = 7 1 bold
+	newMovedDimmed = 15 3 dim
+	func = normal dim
+	newDimmed = 15 2 dim
+	newMovedAlternative = 15 5
+	newMovedAlternativeDimmed = 15 5 dim
+	whitespace = normal 9
+	oldMovedDimmed = 7 3 dim
+	oldDimmed = 7 1 dim
+[diff]
+	colorMoved = zebra
+  tool = nvimdiff
+[core]
+	editor = nvim
+[color "remote"]
+	hint = normal dim
+	success = 2 normal
+	error = 1 normal
+	warning = 3 normal
+[color "interactive"]
+	header = normal dim bold
+	prompt = 15 4
+	help = normal dim
+	error = 1 normal italic
+[color "decorate"]
+	branch = 6 normal
+	tag = 3 normal
+	remotebranch = 5 normal
+	stash = normal dim
+	grafted = 1 normal italic
+	HEAD = 6 normal italic

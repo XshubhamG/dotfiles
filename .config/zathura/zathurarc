@@ -1,0 +1,35 @@
+set recolor true
+set page-padding 0
+set guioptions "Hello"
+set recolor-keephue true
+set adjust-open true
+set statusbar true
+set statusbar-h-padding 5
+set statusbar-v-padding 5
+set statusbar-home-tilde true
+set selection-clipboard clipboard
+set window-title-home-tilde true
+set database sqlite
+
+# Keybindings
+map p print
+map r reload
+map R rotate
+map i recolor
+map A zoom in
+map D zoom out
+map n navigate next
+map u scroll half-up
+map K scroll full-up
+map d scroll half-down
+map T toggle_page_mode
+map J scroll full-down
+map b toggle_statusbar
+map p navigate previous
+map <C-Tab> toggle_statusbar
+
+# Fonts
+set font "Jetbrains Mono Nerd Font 11"
+
+# Colors
+include atheme

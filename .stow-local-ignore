@@ -1,0 +1,11 @@
+\.git
+\.gitignore
+\.stow-local-ignore
+LICENSE
+README.md
+vscode.json
+^/.*/.bak
+^/.*\.org
+.vimrc
+fzf
+manual-zsh-plugins
