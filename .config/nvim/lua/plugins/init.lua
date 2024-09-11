@@ -1,5 +1,6 @@
 return {
 
+  -- NOTE: Mason
   {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
@@ -21,6 +22,7 @@ return {
     end,
   },
 
+  -- NOTE: mason-lspconfig
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
@@ -120,22 +122,6 @@ return {
     lazy = false,
   },
 
-  -- NOTE: barbaecue nvim
-  {
-    "utilyre/barbecue.nvim",
-    event = "VeryLazy",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    opts = {},
-    config = function(_, opts)
-      require("barbecue").setup(opts)
-    end,
-  },
-
   -- NOTE: precognition.nvim
 
   {
@@ -167,26 +153,15 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
+  },
+
+  -- NOTE: mini.ai
+  {
+    "echasnovski/mini.ai",
+    event = "VeryLazy",
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     config = function()
-      -- require("helpview.extras.h").init();
-      require("helpview.extras.gO").init()
-      -- gO.hijak()
-
-      require("helpview").setup {
-        options = {
-          on_enable = function(window, buffer)
-            -- vim.wo[window].statuscolumn = "  ";
-            vim.wo[window].sidescrolloff = 0
-
-            if vim.bo[buffer].modifiable == true then
-              vim.wo[window].colorcolumn = "+1"
-            end
-
-            -- require("helpview.extras.column").set(window,buffer);
-            require("helpview.extras.gO").keymap(window, buffer)
-          end,
-        },
-      }
+      require("mini.ai").setup()
     end,
   },
 }

@@ -66,10 +66,11 @@ zinit cdreplay -q
 # -------------- #
 #     PATH       #
 # -------------- #
-export PATH=$PATH:~/.local/bin
+export PATH="$PATH:~/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.local/share/cargo/bin"
+export PATH="$PATH:$HOME/.local/share/go/bin"
 export MANPAGER='nvim +Man!'
 export VISUAL=nvim
 export EDITOR=nvim
