@@ -1,12 +1,11 @@
 local options = {
   ensure_installed = {
-    -- lua 
+    -- lua
     "lua-language-server",
     'stylua' ,
 
     -- web dev stuff
     "tailwindcss-language-server",
-    "typescript-language-server",
     "prettier",
 
     -- python
