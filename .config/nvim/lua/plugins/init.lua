@@ -57,12 +57,12 @@ return {
 
   -- NOTE: noice.nvim
   --{
-   --"folke/noice.nvim",
-   -- lazy = false,
-   -- dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-   -- config = function()
-   --   require "configs.noice"
-   -- end,
+  --"folke/noice.nvim",
+  -- lazy = false,
+  -- dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+  -- config = function()
+  --   require "configs.noice"
+  -- end,
   --},
 
   -- NOTE: todo-comments.nvim
@@ -164,4 +164,23 @@ return {
       require("mini.ai").setup()
     end,
   },
+
+  -- NOTE: lazygit
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+    }
+  }
+
 }
