@@ -105,3 +105,4 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 30'"
 # starship
 eval "$(starship init bash)"
 
+. "/home/shubham/.deno/env"

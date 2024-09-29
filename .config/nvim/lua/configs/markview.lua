@@ -1,5 +1,4 @@
 local markview = require "markview"
-local heading_presets = require("markview.presets").headings
 local hl_presets = require("markview.presets").highlight_groups
 
 markview.setup {
@@ -31,5 +30,4 @@ markview.setup {
   },
 
   highlight_groups = hl_presets.h_decorated,
-  headings = heading_presets.decorated_labels,
 }

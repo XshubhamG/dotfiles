@@ -3,3 +3,4 @@ zsh-plugins/
 .config/lazygit/state.yml
 .config/vim/plugged/
 .config/vim/autoload/
+.config/nvim/lazy-lock.json
