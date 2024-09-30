@@ -4,3 +4,4 @@ zsh-plugins/
 .config/vim/plugged/
 .config/vim/autoload/
 .config/nvim/lazy-lock.json
+.config/btop/btop.log

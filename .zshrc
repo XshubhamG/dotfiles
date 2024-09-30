@@ -147,7 +147,7 @@ fastfetch
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#1e1e2e,spinner:#7dcfff,hl:#73daca \
 --color=fg:#cdd6f4,header:#73daca,info:#cba6f7,pointer:#e0af68 \
---color=marker:#7dcfff,fg+:#cdd6f4,prompt:#cba6f7,hl+:#73daca --height=50% --border --prompt '∷ ' --pointer » --marker ⇒"
+--color=marker:#7dcfff,fg+:#cdd6f4,prompt:#cba6f7,hl+:#73daca --height=60% --tmux 80% --border --prompt '∷ ' --pointer » --marker ⇒"
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git --exclude node_modules --strip-cwd-prefix"
 
 # Ctrl-T command
