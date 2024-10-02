@@ -4,9 +4,7 @@ return {
   {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-    opts = function()
-      return require "configs.mason"
-    end,
+    opts = {},
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "mason")
       require("mason").setup(opts)
@@ -21,6 +19,7 @@ return {
       vim.g.mason_binaries_list = opts.ensure_installed
     end,
   },
+
 
   -- NOTE: mason-lspconfig
   {
@@ -39,6 +38,25 @@ return {
     end,
   },
 
+  -- nvim-cmp
+  {
+    "hrsh8th/nvim-cmp", -- Required
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-buffer",  -- buffer completions
+      "hrsh7th/cmp-path",    -- path completions
+      "hrsh7th/cmp-cmdline", -- cmdline completions
+      "hrsh7th/vim-vsnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "saadparwaiz1/cmp_luasnip",     -- snippet completions
+      "L3MON4D3/LuaSnip",
+      "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+    },
+    opts = function()
+      return require "configs.cmp"
+    end,
+  },
+
   --NOTE: nvim-tree.nvim
   {
     "nvim-tree/nvim-tree.lua",
@@ -47,23 +65,15 @@ return {
     end,
   },
 
-  --NOTE: nvim-colorizer.nvim
+  -- NOTE: noice.nvim
   {
-    "NvChad/nvim-colorizer.lua",
-    opts = function()
-      return require "configs.colorizer"
+    "folke/noice.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+    config = function()
+      require "configs.noice"
     end,
   },
-
-  -- NOTE: noice.nvim
-  --{
-  --"folke/noice.nvim",
-  -- lazy = false,
-  -- dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-  -- config = function()
-  --   require "configs.noice"
-  -- end,
-  --},
 
   -- NOTE: todo-comments.nvim
   {
@@ -181,6 +191,13 @@ return {
     keys = {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
-  }
+  },
 
+  -- NOTE: colorizer
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = function()
+      return require("configs.colorizer")
+    end
+  },
 }

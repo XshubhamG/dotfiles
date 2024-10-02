@@ -27,16 +27,33 @@ keymap.set("i", "<C-]>", function()
   return vim.fn["codeium#CycleCompletions"]()
 end, { expr = true, silent = true })
 
+keymap.set("n", "<C-m>", function()
+  require("minty.huefy").toggle({ border = true })
+end)
+
 vim.g.codeium_filetypes = {
   markdown = false,
 }
 
+-- Keyboard users
+vim.keymap.set("n", "<C-t>", function()
+  require("menu").open("default")
+end, {})
+
+-- mouse users + nvimtree users!
+vim.keymap.set("n", "<RightMouse>", function()
+  vim.cmd.exec '"normal! \\<RightMouse>"'
+
+  local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+  require("menu").open(options, { mouse = true })
+end, {})
+
 -- neovide
 if vim.g.neovide then
-  keymap.set("n", "<C-s>", ":w<CR>") -- Save
-  keymap.set("v", "<C-c>", '"+y') -- Copy
-  keymap.set("n", "<C-v>", '"+P') -- Paste normal mode
-  keymap.set("v", "<C-v>", '"+P') -- Paste visual mode
-  keymap.set("c", "<C-v>", "<C-R>+") -- Paste command mode
+  keymap.set("n", "<C-s>", ":w<CR>")      -- Save
+  keymap.set("v", "<C-c>", '"+y')         -- Copy
+  keymap.set("n", "<C-v>", '"+P')         -- Paste normal mode
+  keymap.set("v", "<C-v>", '"+P')         -- Paste visual mode
+  keymap.set("c", "<C-v>", "<C-R>+")      -- Paste command mode
   keymap.set("i", "<C-v>", '<ESC>l"+Pli') -- Paste insert mode
 end

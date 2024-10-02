@@ -5,22 +5,6 @@ return {
   ui = {
     title = " Lazy Nvim",
 
-    icons = {
-      cmd = "  ", ---+ ##code##
-      config = "  ",
-      event = "  ",
-      ft = "  ",
-      init = "  ",
-      imports = "  ",
-      keys = "  ",
-      lazy = " ",
-      plugin = "  ",
-      runtime = "  ",
-      require = "  ",
-      source = " ",
-      start = "",
-      task = "  ", ---
-    },
   },
 
   performance = {
