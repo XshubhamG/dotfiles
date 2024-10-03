@@ -18,5 +18,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   command = ":%s/\\s\\+$//e",
 })
 
+-- Set italic for markdown italic
+vim.api.nvim_set_hl(0, "markdownItalic", { italic = true })
+
+-- Set bold for markdown bold
+vim.api.nvim_set_hl(0, "markdownBold", { bold = true })
+
 opt.ruler = true
 opt.rulerformat = " %l  %c"

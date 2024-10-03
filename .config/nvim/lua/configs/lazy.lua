@@ -3,8 +3,12 @@ return {
   install = { colorscheme = { "nvchad" } },
 
   ui = {
-    title = " Lazy Nvim",
-
+    icons = {
+      ft = "",
+      lazy = "󰂠 ",
+      loaded = "",
+      not_loaded = "",
+    },
   },
 
   performance = {

@@ -1,4 +1,65 @@
 return {
+  -- NOTE: conform.nvim
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre", -- uncomment for format on save
+    opts = require "configs.conform",
+  },
+
+  -- NOTE: nvim-lspconfig
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
+
+  -- nvim-cmp
+  {
+    "hrsh8th/nvim-cmp", -- Required
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-buffer", -- buffer completions
+      "hrsh7th/cmp-path", -- path completions
+      "hrsh7th/cmp-cmdline", -- cmdline completions
+      "hrsh7th/vim-vsnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "saadparwaiz1/cmp_luasnip", -- snippet completions
+      "L3MON4D3/LuaSnip",
+      "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+    },
+    opts = function()
+      return require "configs.cmp"
+    end,
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "cmp")
+      local cmp = require "cmp"
+      require("luasnip/loaders/from_vscode").lazy_load()
+
+      cmp.setup(opts)
+
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+        view = {
+          entries = { name = "custom", selection_order = "near_cursor" },
+        },
+      })
+
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources {
+          { name = "path" },
+          { name = "cmdline" },
+        },
+        view = {
+          entries = { name = "custom", selection_order = "near_cursor" },
+        },
+      })
+    end,
+  },
 
   -- NOTE: Mason
   {
@@ -20,7 +81,6 @@ return {
     end,
   },
 
-
   -- NOTE: mason-lspconfig
   {
     "williamboman/mason-lspconfig.nvim",
@@ -35,33 +95,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
       return require "configs.treesitter"
-    end,
-  },
-
-  -- nvim-cmp
-  {
-    "hrsh8th/nvim-cmp", -- Required
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-buffer",  -- buffer completions
-      "hrsh7th/cmp-path",    -- path completions
-      "hrsh7th/cmp-cmdline", -- cmdline completions
-      "hrsh7th/vim-vsnip",
-      "hrsh7th/cmp-nvim-lsp",
-      "saadparwaiz1/cmp_luasnip",     -- snippet completions
-      "L3MON4D3/LuaSnip",
-      "rafamadriz/friendly-snippets", -- a bunch of snippets to use
-    },
-    opts = function()
-      return require "configs.cmp"
-    end,
-  },
-
-  --NOTE: nvim-tree.nvim
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = function()
-      return require "configs.nvimtree"
     end,
   },
 
@@ -85,39 +118,11 @@ return {
     end,
   },
 
-  -- NOTE: lspconfig.nvim
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
-
   --NOTE: hyperland syntax highlighting
   {
     "theRealCarneiro/hyprland-vim-syntax",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     ft = "hypr",
-  },
-
-  --NOTE: none-ls for formatting
-  {
-    "nvimtools/none-ls.nvim", -- configure formatters & linters
-    event = "VeryLazy",
-    dependencies = { "jay-babu/mason-null-ls.nvim" },
-    config = function()
-      require "configs.null-ls"
-    end,
-  },
-
-  -- NOTE: nvim-ts-autotag
-  {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup {
-        opts = {},
-      }
-    end,
   },
 
   -- NOTE: codeium
@@ -143,6 +148,16 @@ return {
     end,
   },
 
+  --NOTE: helpview.nvim
+  {
+    "OXY2DEV/helpview.nvim",
+    lazy = false, -- Recommended
+    ft = "help",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
+
   -- NOTE: markview.nvim
   {
     "OXY2DEV/markview.nvim",
@@ -154,15 +169,6 @@ return {
     config = function()
       require "configs.markview"
     end,
-  },
-
-  {
-    "OXY2DEV/helpview.nvim",
-    lazy = false, -- Recommended
-    ft = "help",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
   },
 
   -- NOTE: mini.ai
@@ -189,15 +195,34 @@ return {
       "nvim-lua/plenary.nvim",
     },
     keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-    }
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    },
   },
 
   -- NOTE: colorizer
   {
     "NvChad/nvim-colorizer.lua",
+    event = "BufReadPost",
     opts = function()
-      return require("configs.colorizer")
-    end
+      return require "configs.colorizer"
+    end,
+  },
+
+  {
+    "shellRaining/hlchunk.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("hlchunk").setup {
+        chunk = {
+          enable = true,
+        },
+        line_num = {
+          enable = true,
+        },
+        blank = {
+          enable = true,
+        },
+      }
+    end,
   },
 }

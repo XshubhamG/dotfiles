@@ -1,11 +1,18 @@
 local markview = require "markview"
-local hl_presets = require("markview.presets").highlight_groups
-
+local presets = require "markview.presets"
 markview.setup {
   buf_ignore = { "nofile" },
   modes = { "n", "i", "c", "v", "no" },
 
   hybrid_modes = { "i" },
+
+  -- This is nice to have
+  callbacks = {
+    on_enable = function(_, win)
+      vim.wo[win].conceallevel = 2
+      vim.wo[win].concealcursor = "nc"
+    end,
+  },
 
   -- Returns the conceallevel to the global value when changing modes
   restore_conceallevel = true,
@@ -29,5 +36,5 @@ markview.setup {
     sign = true,
   },
 
-  highlight_groups = hl_presets.h_decorated,
+  headings = presets.headings.glow_labels,
 }

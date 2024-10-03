@@ -1,42 +1,12 @@
-local cmp = require("cmp")
-local luasnip = require("luasnip")
-require("luasnip/loaders/from_vscode").lazy_load()
+local cmp = require "cmp"
+local luasnip = require "luasnip"
 
 local check_backspace = function()
-  local col = vim.fn.col(".") - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+  local col = vim.fn.col "." - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
-local kind_icons = {
-  Text = "󰅍",
-  Method = "m",
-  Function = "󰊕",
-  Constructor = "",
-  Field = "",
-  Variable = "󱃻",
-  Class = "",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "󰿄",
-  Enum = "",
-  Keyword = "󰌌",
-  Snippet = "",
-  Color = "",
-  File = "󰈔",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = " ",
-  TypeParameter = "",
-}
-
 local options = {
-
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -49,11 +19,11 @@ local options = {
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<C-e>"] = cmp.mapping({
+    ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
-    }),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    },
+    ["<CR>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -84,19 +54,6 @@ local options = {
     }),
   },
 
-  formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-      vim_item.menu = ({
-        luasnip = "[Snippet]",
-        nvim_lsp = "[LSP]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-      })[entry.source.name]
-      return vim_item
-    end,
-  },
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
@@ -110,30 +67,7 @@ local options = {
   view = {
     entries = "custom",
   },
-
 }
-
-
-cmp.setup.cmdline({ "/", "?" }, {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = "buffer" },
-  },
-  view = {
-    entries = { name = "custom", selection_order = "near_cursor" },
-  },
-})
-
-cmp.setup.cmdline(":", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = "path" },
-    { name = "cmdline" },
-  }),
-  view = {
-    entries = { name = "custom", selection_order = "near_cursor" },
-  }
-})
 
 options = vim.tbl_deep_extend("force", options, require "nvchad.cmp")
 
