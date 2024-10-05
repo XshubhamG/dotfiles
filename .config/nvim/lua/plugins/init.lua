@@ -16,7 +16,7 @@ return {
 
   -- nvim-cmp
   {
-    "hrsh8th/nvim-cmp", -- Required
+    "hrsh7th/nvim-cmp", -- Required
     event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-buffer", -- buffer completions
