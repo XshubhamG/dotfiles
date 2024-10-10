@@ -1,6 +1,8 @@
 local options = {
   ensure_installed = {
     "vim",
+    "vimdoc",
+    "query",
     "lua",
     "html",
     "css",

@@ -14,7 +14,7 @@ return {
     end,
   },
 
-  -- nvim-cmp
+  --NOTE: nvim-cmp
   {
     "hrsh7th/nvim-cmp", -- Required
     event = "InsertEnter",
@@ -93,8 +93,14 @@ return {
   --NOTE: nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = { "nvim-treesitter/playground" },
+    event = { "BufReadPost", "BufNewFile" },
     opts = function()
       return require "configs.treesitter"
+    end,
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "treesitter")
+      require("nvim-treesitter.configs").setup(opts)
     end,
   },
 
@@ -102,7 +108,7 @@ return {
   {
     "folke/noice.nvim",
     lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+    dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", "neovim/nvim-lspconfig" },
     config = function()
       require "configs.noice"
     end,
@@ -164,10 +170,9 @@ return {
     lazy = false,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
     },
     config = function()
-      require "configs.markview"
+      return require "configs.markview"
     end,
   },
 

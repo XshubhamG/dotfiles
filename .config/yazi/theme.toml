@@ -32,8 +32,8 @@ border_style  = { fg = "#7f849c" }
 syntect_theme = "~/.config/bat/themes/Catppuccin Mocha.tmTheme"
 
 [status]
-separator_open  = " "
-separator_close = " "
+separator_open  = ""
+separator_close = ""
 separator_style = { fg = "#45475a", bg = "#45475a" }
 
 # Mode
