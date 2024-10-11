@@ -11,7 +11,10 @@ keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss noice m
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlight" })
 
-keymap.set("n", "<leader>fm", ":lua vim.lsp.buf.format()<CR>", { desc = "Format file" })
+keymap.set("n", "<leader>fm", function()
+  local conform = require "conform"
+  conform.format { timeout_ms = 500, lsp_fallback = true }
+end, { desc = "Format file" })
 
 keymap.set("i", "jj", "<ESC>")
 
