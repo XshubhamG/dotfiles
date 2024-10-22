@@ -8,6 +8,7 @@ local options = {
     javascriptreact = { "prettier" },
     typescript = { "prettier" },
     typescriptreact = { "prettier" },
+    astro = { "prettier" },
     vue = { "prettier" },
     json = { "prettier" },
     yaml = { "prettier" },
