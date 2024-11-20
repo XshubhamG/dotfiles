@@ -90,6 +90,15 @@ return {
     },
   },
 
+  --NOTE: nvim-lint
+  {
+    "mfussenegger/nvim-lint",
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require "configs.lint"
+    end,
+  },
+
   --NOTE: nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
@@ -213,6 +222,7 @@ return {
     end,
   },
 
+  -- NOTE: hlchunk
   {
     "shellRaining/hlchunk.nvim",
     event = { "BufReadPre", "BufNewFile" },

@@ -26,15 +26,6 @@ export GTK2_RC_FILES=${GTK2_RC_FILES:="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"}
 # Source zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# -------------- #
-#     Plugins    #
-# -------------- #
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light Aloxaf/fzf-tab
-source ~/.zcolors
-
 # --------------- #
 # presist history #
 # --------------- #
@@ -61,7 +52,17 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -T --icons --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -T --icons --color=always $realpath'
 zstyle ':fzf-tab:*' fzf-bindings 'space:accept'
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zinit cdreplay -q
+
+# -------------- #
+#     Plugins    #
+# -------------- #
+zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-syntax-highlighting
+source ~/.zcolors
 
 # -------------- #
 #     PATH       #

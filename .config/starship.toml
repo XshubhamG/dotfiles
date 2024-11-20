@@ -101,7 +101,7 @@ home_symbol = " Home"
 "Downloads" = " Downloads"
 "Music" = "󰝚 Music"
 "Pictures" = "  Pictures"
-"Code" = "󰲋  Code"
+"code" = "󰲋  code"
 
 [git_branch]
 symbol = ""

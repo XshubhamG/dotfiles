@@ -49,6 +49,9 @@ end, {})
 
 -- neovide
 if vim.g.neovide then
+  vim.g.neovide_refresh_rate = 60
+  vim.g.neovide_cursor_vfx_mode = "railgun"
+
   keymap.set("n", "<C-s>", ":w<CR>") -- Save
   keymap.set("v", "<C-c>", '"+y') -- Copy
   keymap.set("n", "<C-v>", '"+P') -- Paste normal mode
