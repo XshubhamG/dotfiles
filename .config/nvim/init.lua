@@ -31,19 +31,12 @@ dofile(vim.g.base46_cache .. "statusline")
 require("base46").load_all_highlights()
 
 require "options"
+require "autocmds"
 require "nvchad.autocmds"
+require "configs.highlights"
 
 vim.schedule(function()
   require "mappings"
 end)
 
 vim.g.codeium_no_map_tab = 1
-
--- Highlight when yanking (copying) text
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})

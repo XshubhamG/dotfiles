@@ -14,6 +14,16 @@ return {
     end,
   },
 
+  {
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+
   --NOTE: nvim-cmp
   {
     "hrsh7th/nvim-cmp", -- Required
@@ -84,7 +94,7 @@ return {
   -- NOTE: mason-lspconfig
   {
     "williamboman/mason-lspconfig.nvim",
-    lazy = false,
+    lazy = true,
     opts = {
       auto_install = true,
     },
@@ -116,7 +126,7 @@ return {
   -- NOTE: noice.nvim
   {
     "folke/noice.nvim",
-    lazy = false,
+    event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", "neovim/nvim-lspconfig" },
     config = function()
       require "configs.noice"
@@ -136,6 +146,7 @@ return {
   --NOTE: hyperland syntax highlighting
   {
     "theRealCarneiro/hyprland-vim-syntax",
+    lazy = true,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     ft = "hypr",
   },
@@ -143,20 +154,21 @@ return {
   -- NOTE: codeium
   {
     "Exafunction/codeium.vim",
+    enabled = false,
     event = "BufEnter",
   },
 
   -- NOTE: tmux
   {
     "christoomey/vim-tmux-navigator",
-    lazy = false,
+    lazy = true,
   },
 
   -- NOTE: precognition.nvim
 
   {
     "tris203/precognition.nvim",
-    event = "VeryLazy",
+    event = { "BufEnter", "BufNewFile", "BufWritePre" },
     opts = {},
     config = function(_, opts)
       require("precognition").setup(opts)
@@ -166,51 +178,32 @@ return {
   --NOTE: helpview.nvim
   {
     "OXY2DEV/helpview.nvim",
-    lazy = false, -- Recommended
+    lazy = true,
     ft = "help",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
   },
 
-  -- NOTE: markview.nvim
+  -- NOTE: render-markdown
   {
-    "OXY2DEV/markview.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
     lazy = false,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
+    ft = "markdown",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
     config = function()
-      return require "configs.markview"
+      require "configs.markdown"
     end,
   },
 
   -- NOTE: mini.ai
   {
     "echasnovski/mini.ai",
-    event = "VeryLazy",
+    event = "InsertEnter",
     dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     config = function()
       require("mini.ai").setup()
     end,
-  },
-
-  -- NOTE: lazygit
-  {
-    "kdheepak/lazygit.nvim",
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-      "LazyGitCurrentFile",
-      "LazyGitFilter",
-      "LazyGitFilterCurrentFile",
-    },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-    },
   },
 
   -- NOTE: colorizer

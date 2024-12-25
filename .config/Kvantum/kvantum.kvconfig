@@ -1,0 +1,5 @@
+[General]
+theme=catppuccin-mocha-blue
+
+[Applications]
+catppuccin-mocha-blue=brave-browser

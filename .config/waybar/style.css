@@ -1,4 +1,4 @@
-@import 'mocha.css';
+@import "mocha.css";
 * {
   font-family: JetBrainsMono Nerd Font;
   font-size: 14px;
@@ -80,12 +80,12 @@ button {
 @keyframes blink {
   to {
     background-color: #ffffff;
-    color: #000000;
+    color: @base;
   }
 }
 
 label:focus {
-  background-color: #000000;
+  background-color: @base;
 }
 
 #network.disconnected {
@@ -107,6 +107,13 @@ label:focus {
 
 #bluetooth {
   color: @blue;
+}
+
+#bluetooth .icon {
+  color: @base;
+  background-color: @blue;
+  border-radius: 5em / 5em;
+  padding: 0 10px;
 }
 
 #network {

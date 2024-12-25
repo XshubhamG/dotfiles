@@ -2,7 +2,7 @@ set recolor true
 set page-padding 0
 set guioptions "Hello"
 set recolor-keephue true
-set adjust-open true
+set adjust-open "best-fit"
 set statusbar true
 set statusbar-h-padding 5
 set statusbar-v-padding 5

@@ -20,8 +20,6 @@ export GOPATH=${GOPATH:="$XDG_DATA_HOME/go"}
 export NB_DIR=${NB_DIR:="$XDG_DATA_HOME/nb"}
 export NBRC_PATH=${NBRC_PATH:="$XDG_CONFIG_HOME/nbrc"}
 export GTK2_RC_FILES=${GTK2_RC_FILES:="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"}
-# export PASSWORD_STORE_DIR=${PASSWORD_STORE_DIR:="$XDG_DATA_HOME/pass"}
-# export GNUPGHOME=${GNUPGHOME:="$XDG_DATA_HOME/gnupg"}
 
 # Source zinit
 source "${ZINIT_HOME}/zinit.zsh"
@@ -177,8 +175,22 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
+# nvim select
+function nvims() {
+  items=("default" "kickstart" "LazyVim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config ⇒" --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
 # keybinds
 bindkey -e
+bindkey -s ^a "nvims\n"
 bindkey "^p" history-search-backward
 bindkey "^n" history-search-forward
 . "/home/shubham/.deno/env"
