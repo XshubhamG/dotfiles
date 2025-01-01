@@ -18,6 +18,7 @@ local options = {
     c = { "clang-format" },
     cpp = { "clang-format" },
     python = { "black" },
+    php = { "php-cs-fixer" },
   },
 
   format_on_save = {
