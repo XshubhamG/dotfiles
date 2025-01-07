@@ -1,64 +1,67 @@
-# Dotfiles
+# 🌟 Dotfiles of Hyprland-Arch Config in Catppuccin_mocha
 
-A decent configuration setup for my personal [arch linux](https://archlinux.org/) desktop with [hypland](https://hyprland.org/) window manager.
+![Main Image](./assets/preview-fastfetch.png)
 
-## Stack
+A decent configuration setup for my personal [arch linux](https://archlinux.org/) desktop with [hypland](https://hyprland.org/) window manager in my favourite theme [catppuccin](https://github.com/catppuccin/catppuccin)
 
-- **WM**: [hyprland](https://hyprland.org/)
-- **Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty/)/[warp](https://www.warp.dev/)
-- **Editor**: [vscode](https://code.visualstudio.com/)/[neovim](https://neovim.io/)
-- **Shell**: [zsh](https://wiki.archlinux.org/title/Zsh)
-- **Bar**: [Waybar](https://github.com/Alexays/Waybar)
-- **Launcher**: [wofi](https://github.com/SimplyCEO/wofi)
-- **Multiplexer**: [tmux](https://github.com/tmux/tmux)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png"/>
+</p>
 
-## Current setup
+## 📚 Table of Contents
 
-```zsh
+- [Preview](#👀-preview)
+- [Installation](#installation)
+- [License](#license)
 
+## 👀 Preview
 
-lt --ignore-glob=.git
- .
-├── 󱆃 .bashrc
-├──  .config
-│   ├──  bat
-│   ├──  btop
-│   ├──  fastfetch
-│   ├──  git
-│   ├──  glow
-│   ├──  hypr
-│   ├──  imv
-│   ├──  kanata
-│   ├──  kitty
-│   ├──  Kvantum
-│   ├──  lazygit
-│   ├──  mpv
-│   ├──  neofetch
-│   ├──  neovide
-│   ├──  nvim
-│   ├──  pacseek
-│   ├──  ranger
-│   ├──  smassh
-│   ├──  starship.toml
-│   ├──  swaync
-│   ├──  tmux
-│   ├──  vesktop
-│   ├──  vim
-│   ├──  waybar
-│   ├──  waypaper
-│   ├──  wlogout
-│   ├──  wofi
-│   ├──  yazi
-│   └──  zathura
-├──  .gitignore
-├──  .stow-local-ignore
-├── 󱆃 .zshrc
-├──  fonts
-├──  fzf
-├──  manual-zsh-plugins
-├── 󰉏 Pictures
-└──  README.md
-```
+<details>
+    <summary>Desktop</summary>
+
+![Preview-1](./assets/preview-1.png)
+
+</details>
+
+<details>
+    <summary>fastfetch</summary>
+
+![Preview-fastfetch](./assets/preview-fastfetch.png)
+
+</details>
+
+<details>
+<summary>Neovim</summary>
+
+![Preview-nvim](./assets/preview-nvim.png)
+
+</details>
+
+<details>
+    <summary>spotify</summary>
+
+![Preview-spotify](./assets/preview-spotify.png)
+
+</details>
+<details>
+    <summary>Browser</summary>
+
+![Preview-brave](./assets/preview-brave.png)
+
+</details>
+
+<details>
+    <summary>File manager</summary>
+
+![Preview-yazi](./assets/preview-yazi.png)
+
+</details>
+<details>
+    <summary>Disord</summary>
+
+![Preview-discord](./assets/preview-discord.png)
+
+</details>
 
 ## Quick Start
 
@@ -88,3 +91,11 @@ chmod +x install.sh
 # Run the installation script
 ./install.sh
 ```
+
+<p align="center">
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
+</p>
+
+<p align="center">
+	<a href="https://github.com/xshubhamg/xshubhamg/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+</p>

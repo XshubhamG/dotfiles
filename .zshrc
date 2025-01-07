@@ -194,3 +194,5 @@ bindkey -s ^a "nvims\n"
 bindkey "^p" history-search-backward
 bindkey "^n" history-search-forward
 . "/home/shubham/.deno/env"
+
+export PATH=$PATH:/home/shubham/.spicetify

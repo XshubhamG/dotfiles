@@ -11,6 +11,7 @@ opt.guifont = "JetBrainsMono Nerd Font:h12"
 opt.list = true
 opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.termguicolors = true
+opt.virtualedit = "block"
 
 -- remove whitespace on save
 vim.api.nvim_create_autocmd("BufWritePre", {
