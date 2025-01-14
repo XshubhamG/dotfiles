@@ -1,4 +1,4 @@
-require("render-markdown").setup {
+return {
   enabled = true,
   max_file_size = 20.0,
   debounce = 100,
@@ -277,7 +277,7 @@ require("render-markdown").setup {
         sign = { enabled = false },
       },
     },
-    filetype = {},
+    filetype = { "markdown" },
   },
 
   custom_handlers = {},

@@ -32,11 +32,10 @@ require("base46").load_all_highlights()
 
 require "options"
 require "autocmds"
+require "utils.autosave"
 require "nvchad.autocmds"
 require "configs.highlights"
 
 vim.schedule(function()
   require "mappings"
 end)
-
-vim.g.codeium_no_map_tab = 1

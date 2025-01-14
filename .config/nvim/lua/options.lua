@@ -19,16 +19,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   command = ":%s/\\s\\+$//e",
 })
 
--- Set italic for markdown italic
-vim.api.nvim_set_hl(0, "markdownItalic", { italic = true })
-
--- Set bold for markdown bold
-vim.api.nvim_set_hl(0, "markdownBold", { bold = true })
-
 opt.ruler = true
 opt.rulerformat = " %l  %c"
 
 -- treesitter stuff
 vim.treesitter.language.register("bash", "zsh")
-vim.treesitter.language.register("markdown", "text")
 vim.treesitter.language.register("xml", { "svg", "xslt" })
+vim.treesitter.language.register("markdown", "vimwiki")

@@ -39,7 +39,3 @@ vim.api.nvim_set_hl(
 vim.api.nvim_set_hl(0, "RenderMarkdownBullet", { fg = "#94e2d5", bg = "#313244" })
 vim.api.nvim_set_hl(0, "RenderMarkdownInlineHighlight", { fg = "#a6e3a1" })
 vim.api.nvim_set_hl(0, "RenderMarkdownChecked", { fg = "#a6e3a1" })
-
--- italic and bold highlights
-vim.api.nvim_set_hl(0, "@markup.italic", { italic = true, fg = "#f38ba8", bg = "#313244" })
-vim.api.nvim_set_hl(0, "@markup.strong", { bold = true, fg = "#94e2d5", bg = "#313244" })

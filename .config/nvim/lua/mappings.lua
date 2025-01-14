@@ -3,36 +3,26 @@ require "nvchad.mappings"
 -- Keymaps
 local keymap = vim.keymap -- for consciseness
 
+-- ciw
+keymap.set("n", "<C-c>", "ciw")
+
 -- general keymaps
-keymap.set("n", "<leader>qa", ":qa!<CR>")
+keymap.set("n", "<leader>qa", ":qa!<CR>") -- closing all files & neovim
 
 -- dismiss noice message
 keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss noice message" })
 
+-- clearing search highlight
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlight" })
 
+-- formatting current buffer using conform.nvim
 keymap.set("n", "<leader>fm", function()
   local conform = require "conform"
   conform.format { timeout_ms = 500, lsp_fallback = true }
 end, { desc = "Format file" })
 
+-- escaping into normal mode
 keymap.set("i", "jj", "<ESC>")
-
-keymap.set("i", "<C-g>", function()
-  return vim.fn["codeium#Accept"]()
-end, { expr = true, silent = true })
-
-keymap.set("i", "<C-x>", function()
-  return vim.fn["codeium#Clear"]()
-end, { expr = true, silent = true })
-
-keymap.set("i", "<C-]>", function()
-  return vim.fn["codeium#CycleCompletions"]()
-end, { expr = true, silent = true })
-
-vim.g.codeium_filetypes = {
-  markdown = false,
-}
 
 -- Keyboard users
 vim.keymap.set("n", "<C-t>", function()
