@@ -85,7 +85,6 @@ alias lz="lazygit"
 alias rmdir="rm -r"
 alias ncdu="ncdu --color dark"
 alias rr="ranger"
-alias omp="oh-my-posh"
 alias tmux="tmux -u"
 alias printalias="alias | fzf"
 alias printenv="printenv | fzf"
@@ -120,6 +119,8 @@ alias l='exa -F --icons --color=always --group-directories-first'
 alias l.='exa -a | grep -E "^\."'
 alias lt="exa -aT --icons --color=always --level=2"
 
+alias pipes='/usr/bin/pipes-rs'
+
 # ----------- #
 #   thefuck   #
 # ----------- #
@@ -133,9 +134,6 @@ eval $(thefuck --alias)
 # ------------ #
 #  info-fetch  #
 # ------------ #
-alias fetch='fm6000 -c "random"'
-# fetch -m 8 -g 12 -l 23 -dog
-# neofetch
 fastfetch
 
 # ------------- #
@@ -196,3 +194,4 @@ bindkey "^n" history-search-forward
 . "/home/shubham/.deno/env"
 
 export PATH=$PATH:/home/shubham/.spicetify
+
