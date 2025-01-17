@@ -39,3 +39,7 @@ require "configs.highlights"
 vim.schedule(function()
   require "mappings"
 end)
+
+vim.filetype.add {
+  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+}

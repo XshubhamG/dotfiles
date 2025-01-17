@@ -154,11 +154,11 @@ return {
   },
 
   pipe_table = {
-    enabled = true,
-    preset = "round",
-    style = "full",
+    enabled = false,
+    preset = "none",
+    style = "normal",
     cell = "padded",
-    padding = 1,
+    padding = 0,
     min_width = 0,
     border = {
       "┌",
@@ -223,6 +223,7 @@ return {
     highlight = "RenderMarkdownLink",
     wiki = { icon = "󱗖 ", highlight = "RenderMarkdownWikiLink" },
     custom = {
+      archwiki = { pattern = "wiki.archlinux.org", icon = " " },
       web = { pattern = "^http", icon = "󰖟 " },
       youtube = { pattern = "youtube%.com", icon = "󰗃 " },
       github = { pattern = "github%.com", icon = "󰊤 " },

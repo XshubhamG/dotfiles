@@ -1,4 +1,4 @@
-# 🌟 Dotfiles of Hyprland-Arch Config in Catppuccin_mocha
+<h1 align="center"> 🌟 Hyprland-Arch Config in Catppuccin_mocha</h1>
 
 ![Main Image](./assets/preview-fastfetch.png)
 
@@ -10,9 +10,40 @@ A decent configuration setup for my personal [arch linux](https://archlinux.org/
 
 ## 📚 Table of Contents
 
+- [Programs](#📦-programs)
 - [Preview](#👀-preview)
 - [Installation](#installation)
 - [License](#license)
+
+## 📦 Programs
+
+List of programs and tools I use
+
+| Component         | Program                                                                                                           |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Window Manager 🪟 | [Hyprland](github.com/hyprwm/Hyprland)                                                                            |
+| Terminal          | [Kitty](github.com/kovidgoyal/kitty) / [warp](app.warp.dev)                                                       |
+| Shell / prompt    | [zsh](wiki.archlinux.org/title/Zsh) / [starship](starship.rs)                                                     |
+| Multiplexer       | [tmux](github.com/tmux/tmux)                                                                                      |
+| Font              | [JetBrains Mono](jetbrains.com/lp/mono/)                                                                          |
+| Fetch             | [fastfetch](github.com/fastfetch-cli/fastfetch) / [pokeget](github.com/talwat/pokeget-rs)                         |
+| File Manager      | [yazi](yazi-rs.github.io/) / [thunar](wiki.archlinux.org/title/Thunar)                                            |
+| Editor            | [neovim](neovim.io) / [nvChad](github.com/nvChad) /[vscode](wiki.archlinux.org/title/Visual_Studio_Code)          |
+| Browser           | [Brave](brave.com) / [zen](zen-browser.app)                                                                       |
+| Discord           | [Vesktop](github.com/1j01/vesktop)                                                                                |
+| Bar               | [waybar](github.com/Alexays/Waybar)                                                                               |
+| Launcher          | [rofi](github.com/davatorium/rofi)                                                                                |
+| Colorscheme       | [catppuccin](github.com/catppuccin/catppuccin)                                                                    |
+| Notification      | [dunst](dunst-project.org)                                                                                        |
+| Lockscreen        | [hyprlock](github.com/hyprwm/hyprlock)                                                                            |
+| Display Manager   | [sddm](wiki.archlinux.org/title/sddm)                                                                             |
+| Music Player      | [Spotify](spotify.com) / [spicetify](spicetify.app)                                                               |
+| Visualizer        | [cava](github.com/karlstav/cava)                                                                                  |
+| Media Player      | [mpv](mpv.io)                                                                                                     |
+| Screenshot        | [flameshot](flameshot.org)                                                                                        |
+| Notes             | [Obsidian](obsidian.md)                                                                                           |
+| pdf reader        | [zathura](pwmt.org/projects/zathura/)                                                                             |
+| Others            | [bat](github.com/sharkdp/bat) / [exa](github.com/ogham/exa) / [fd](github.com/sharkdp/fd) / [ripgrep](github.com) |
 
 ## 👀 Preview
 

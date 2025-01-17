@@ -153,14 +153,6 @@ return {
     end,
   },
 
-  --NOTE: hyperland syntax highlighting
-  {
-    "theRealCarneiro/hyprland-vim-syntax",
-    lazy = true,
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    ft = "hypr",
-  },
-
   -- NOTE: tmux
   {
     "christoomey/vim-tmux-navigator",
