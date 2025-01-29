@@ -1,6 +1,6 @@
 @import "mocha.css";
 * {
-  font-family: Maple Mono NF;
+  font-family: "Maple Mono NF";
   font-size: 14px;
 }
 
@@ -102,7 +102,8 @@ label:focus {
 }
 
 #custom-power {
-  color: @red;
+  color: @base;
+  background-color: @red;
 }
 
 #bluetooth {

@@ -73,13 +73,9 @@ M.base46 = {
   hl_override = {
     Comment = { italic = true },
     ["@keyword"] = { italic = true },
-    ["@operator"] = { italic = true },
-    ["@constant"] = { italic = true },
     ["@comment"] = { italic = true },
     ["@string"] = { italic = true },
     ["@string.special"] = { italic = true },
-    ["@property"] = { italic = true },
-    ["@text"] = { italic = true },
   },
 }
 
