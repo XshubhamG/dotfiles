@@ -11,6 +11,10 @@
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	pager = bat --paging=always
 
+[push]
+  autoSetupRemote = true
+  default = current
+
 [rerere]
 	enabled = 1
 	autoupdate = 1
