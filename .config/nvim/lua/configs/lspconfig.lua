@@ -1,43 +1,34 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
-
-local lspconfig = require "lspconfig"
-
--- EXAMPLE
-local servers = { "astro", "html", "ts_ls", "tailwindcss", "clangd", "gopls", "pyright", "intelephense" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
+-- lsp servers
+local servers = {
+  astro = {},
+  html = {},
+  ts_ls = {},
+  tailwindcss = {},
+  clangd = {},
+  gopls = {},
+  pyright = {},
+  intelephense = {},
+  hyprls = {},
 
-lspconfig.lua_ls.setup {
-  on_attach = nvlsp.on_attach,
-  capabilities = nvlsp.capabilities,
-  on_init = nvlsp.on_init,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
+  lua_ls = {
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = { "vim" },
+        },
       },
     },
   },
 }
 
--- Hyprlang LSP
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.hl", "hypr*.conf" },
-  callback = function(event)
-    print(string.format("starting hyprls for %s", vim.inspect(event)))
-    vim.lsp.start {
-      name = "hyprlang",
-      cmd = { "hyprls" },
-      root_dir = vim.fn.getcwd(),
-    }
-  end,
-})
+for name, opts in pairs(servers) do
+  opts.on_init = nvlsp.on_init
+  opts.on_attach = nvlsp.on_attach
+  opts.capabilities = nvlsp.capabilities
+
+  require("lspconfig")[name].setup(opts)
+end

@@ -3,14 +3,13 @@ local autocmd = vim.api.nvim_create_autocmd
 -- Highlight when yanking (copying) text
 autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    (vim.hl or vim.highlight).on_yank()
   end,
 })
 
 -- restore cursor position on file open
-
 autocmd("BufReadPost", {
   pattern = "*",
   callback = function()
@@ -22,6 +21,16 @@ autocmd("BufReadPost", {
       and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
     then
       vim.cmd 'normal! g`"'
+    end
+  end,
+})
+
+-- show nvDash when all buffers are closed
+vim.api.nvim_create_autocmd("BufDelete", {
+  callback = function()
+    local bufs = vim.t.bufs
+    if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == "" then
+      vim.cmd "Nvdash"
     end
   end,
 })

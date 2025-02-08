@@ -28,6 +28,7 @@ local options = {
       "typescript",
       "javascriptreact",
       "typescriptreact",
+      "astro",
       "svelte",
       "vue",
       "tsx",

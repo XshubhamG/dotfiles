@@ -10,6 +10,16 @@ return {
     },
   },
 
+  -- NOTE: indent-blankline.nvim
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+  },
+
   -- NOTE: Snacks.nvim
   {
     "folke/snacks.nvim",
@@ -201,7 +211,8 @@ return {
   -- NOTE: render-markdown.nvim
   {
     "MeanderingProgrammer/render-markdown.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    ft = { "markdown" },
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
     opts = function()
       -- italic and bold highlights

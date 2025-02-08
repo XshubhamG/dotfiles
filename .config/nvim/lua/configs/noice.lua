@@ -21,26 +21,26 @@ return {
     inc_rename = true, -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = true, -- add a border to hover docs and signature help
   },
-  require("telescope").load_extension "noice",
-  views = {
-    popupmenu = {
-      relative = "editor",
-      backend = "cmp",
-      position = {
-        row = 16,
-        col = "50%",
-      },
-      size = {
-        width = 60,
-        height = 10,
-      },
-      border = {
-        style = "rounded",
-        padding = { 0, 1 },
-      },
-      win_options = {
-        winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
-      },
-    },
-  },
+  -- require("telescope").load_extension "noice",
+  -- views = {
+  --   popupmenu = {
+  --     relative = "editor",
+  --     backend = "nui",
+  --     position = {
+  --       row = 16,
+  --       col = "50%",
+  --     },
+  --     size = {
+  --       width = 60,
+  --       height = 10,
+  --     },
+  --     border = {
+  --       style = "rounded",
+  --       padding = { 0, 1 },
+  --     },
+  --     win_options = {
+  --       winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+  --     },
+  --   },
+  -- },noic
 }

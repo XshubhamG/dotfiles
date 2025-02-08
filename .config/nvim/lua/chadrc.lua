@@ -34,6 +34,7 @@ M.mason = {
     "tailwindcss-language-server",
     "prettier",
     "typescript-language-server",
+    "astro-language-server",
 
     -- python
     "black",

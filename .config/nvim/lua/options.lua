@@ -22,6 +22,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 opt.ruler = true
 opt.rulerformat = " %l  %c"
 
+vim.g.snacks_animate = true
+
 -- treesitter stuff
 vim.treesitter.language.register("bash", "zsh")
 vim.treesitter.language.register("xml", { "svg", "xslt" })
