@@ -9,6 +9,9 @@ keymap.set("n", "<C-c>", "ciw")
 -- general keymaps
 keymap.set("n", "<leader>qa", ":qa!<CR>") -- closing all files & neovim
 
+-- delete single character without copying into register
+keymap.set("n", "x", '"_x')
+
 -- dismiss noice message
 keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss noice message" })
 

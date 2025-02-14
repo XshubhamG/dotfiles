@@ -89,8 +89,6 @@ alias tmux="tmux -u"
 alias printalias="alias | fzf"
 alias printenv="printenv | fzf"
 alias fastfetch="pokeget random --hide-name | fastfetch --file -"
-alias code="code --ozone-platform=wayland"
-alias obsidian="obsidian --ozone-platform=wayland"
 alias spotify="spotify --ozone-platform=wayland"
 
 # config files
