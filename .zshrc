@@ -176,7 +176,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # nvim select
 function nvims() {
-    items=("NvChad" "LazyVim")
+    items=("NvChad" "LazyVim" "Test_Vim")
     config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config ⇒" --height=~50% --layout=reverse --border --exit-0)
     if [[ -z $config ]]; then
         echo "Nothing selected"
@@ -196,3 +196,6 @@ bindkey "^n" history-search-forward
 
 export PATH=$PATH:/home/shubham/.spicetify
 
+# uv python
+. "$HOME/.local/share/../bin/env"
+eval "$(uv generate-shell-completion zsh)"

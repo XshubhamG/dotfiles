@@ -2,6 +2,7 @@
 local M = {}
 
 M.opts = {
+  image = {},
   bigfile = { enabled = true },
   dashboard = { enabled = false },
   indent = { enabled = true },

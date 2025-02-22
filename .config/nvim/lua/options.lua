@@ -19,6 +19,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   command = ":%s/\\s\\+$//e",
 })
 
+vim.schedule(function()
+  opt.clipboard = "unnamedplus"
+end)
+
+-- Keep signcolumn on by default
+opt.signcolumn = "yes"
+opt.swapfile = false
 opt.ruler = true
 opt.rulerformat = " %l  %c"
 
