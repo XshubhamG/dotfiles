@@ -3,8 +3,8 @@
 #
 # If not running interactively, don't do anything
 case $- in
-*i*) ;;
-*) return ;;
+    *i*) ;;
+    *) return ;;
 esac
 
 HISTCONTROL=ignoreboth
@@ -21,15 +21,15 @@ shopt -s checkwinsize
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-xterm-color | *-256color) color_prompt=yes ;;
+    xterm-color | *-256color) color_prompt=yes ;;
 esac
 
 if [ -n "$force_color_prompt" ]; then
-  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    color_prompt=yes
-  else
-    color_prompt=
-  fi
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+        color_prompt=yes
+    else
+        color_prompt=
+    fi
 fi
 
 # Aliases
@@ -68,20 +68,20 @@ alias lt="exa -T --icons --color=always"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  alias ls='ls --color=auto'
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
 fi
 
 if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
+    . ~/.bash_aliases
 fi
 
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 . "$HOME/.cargo/env"
 
@@ -104,8 +104,5 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 30'"
 eval "$(starship init bash)"
 
 . "/home/shubham/.deno/env"
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-source ~/.config/envman/PATH.env
 
 . "$HOME/.local/share/../bin/env"

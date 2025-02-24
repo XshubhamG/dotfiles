@@ -39,6 +39,18 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
 
+# --------------- #
+# ZSH Basic Option #
+# --------------- #
+setopt autocd
+setopt correct
+setopt interactivecomments
+setopt magicequalsubst
+setopt nonomatch
+setopt notify
+setopt numericglobsort
+setopt promptsubst
+
 # -------------- #
 # Zstyle command #
 # -------------- #
