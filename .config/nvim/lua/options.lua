@@ -3,7 +3,7 @@ require "nvchad.options"
 local opt = vim.opt -- for conscisenes
 
 opt.relativenumber = true
-opt.shiftwidth = 4
+opt.shiftwidth = 2
 opt.number = true
 opt.colorcolumn = "100"
 opt.cursorlineopt = "both"
