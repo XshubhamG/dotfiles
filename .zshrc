@@ -147,7 +147,7 @@ eval $(thefuck --alias)
 # ------------ #
 #  info-fetch  #
 # ------------ #
-fastfetch
+# fastfetch
 
 # ------------- #
 #     FZF       #
