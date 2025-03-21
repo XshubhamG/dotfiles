@@ -20,7 +20,7 @@ export GOPATH=${GOPATH:="$XDG_DATA_HOME/go"}
 export NB_DIR=${NB_DIR:="$XDG_DATA_HOME/nb"}
 export NBRC_PATH=${NBRC_PATH:="$XDG_CONFIG_HOME/nbrc"}
 export GTK2_RC_FILES=${GTK2_RC_FILES:="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"}
-
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
 # Source zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -73,6 +73,14 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 source ~/.zcolors
+
+# -------------- #
+#     Plugins    #
+# -------------- #
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::git
 
 # -------------- #
 #     PATH       #

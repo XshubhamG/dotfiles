@@ -26,11 +26,18 @@ autocmd("BufReadPost", {
 })
 
 -- show nvDash when all buffers are closed
-vim.api.nvim_create_autocmd("BufDelete", {
+autocmd("BufDelete", {
   callback = function()
     local bufs = vim.t.bufs
     if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == "" then
       vim.cmd "Nvdash"
     end
+  end,
+})
+
+-- save the current buffer on leaving insert mode
+autocmd("VimEnter", {
+  callback = function()
+    vim.cmd "AsToggle"
   end,
 })
