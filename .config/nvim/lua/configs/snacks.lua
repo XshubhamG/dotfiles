@@ -2,7 +2,28 @@
 local M = {}
 
 M.opts = {
-  image = {},
+
+  image = {
+    enabled = true,
+    doc = {
+      float = true,
+      inline = false,
+      max_width = 60,
+      max_height = 30,
+      wo = {
+        wrap = true,
+      },
+    },
+    img_dirs = { "img", "images", "assets", "static", "public", "media", "Pictures", "Wallpapers" },
+  },
+
+  explorer = {
+    enabled = true,
+    layout = {
+      cycle = false,
+    },
+  },
+
   bigfile = { enabled = true },
   dashboard = { enabled = false },
   indent = { enabled = true },
@@ -20,6 +41,7 @@ M.opts = {
       wo = { wrap = true }, -- Wrap notifications
     },
   },
+  git = {},
 }
 
 M.keys = {
@@ -43,6 +65,13 @@ M.keys = {
       Snacks.scratch.select()
     end,
     desc = "Select Scratch Buffer",
+  },
+  {
+    "<leader>es",
+    function()
+      require("snacks").explorer()
+    end,
+    desc = "Open Snacks Explorer",
   },
   {
     "<leader>hn",

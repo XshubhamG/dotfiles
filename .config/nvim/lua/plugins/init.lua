@@ -15,8 +15,6 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     enabled = false,
     main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
     opts = {},
   },
 
@@ -25,6 +23,7 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    ---@type snacks.Config
     opts = require("configs.snacks").opts,
     keys = require("configs.snacks").keys,
   },
