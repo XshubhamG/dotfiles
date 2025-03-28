@@ -21,6 +21,8 @@ export NB_DIR=${NB_DIR:="$XDG_DATA_HOME/nb"}
 export NBRC_PATH=${NBRC_PATH:="$XDG_CONFIG_HOME/nbrc"}
 export GTK2_RC_FILES=${GTK2_RC_FILES:="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"}
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
+export XDG_DATA_DIRS=${XDG_DATA_DIRS:="/usr/share/applications"}
+
 # Source zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
