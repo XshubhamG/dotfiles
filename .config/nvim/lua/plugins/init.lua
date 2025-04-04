@@ -221,6 +221,7 @@ return {
     end,
   },
 
+  -- NOTE: Codeium
   {
     "Exafunction/codeium.vim",
     event = "VeryLazy",
@@ -237,6 +238,17 @@ return {
       vim.keymap.set("i", "<c-x>", function()
         return vim.fn["codeium#Clear"]()
       end, { expr = true, silent = true })
+    end,
+  },
+
+  -- NOTE: hardtime.nvim
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+    config = function(_, opts)
+      require("hardtime").setup(opts)
     end,
   },
 }
