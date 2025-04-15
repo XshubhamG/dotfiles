@@ -210,9 +210,10 @@ return {
   -- NOTE: render-markdown.nvim
   {
     "MeanderingProgrammer/render-markdown.nvim",
-    -- event = "VeryLazy",
     ft = { "markdown" },
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type function|render.md.UserConfig
     opts = function()
       -- italic and bold highlights
       vim.api.nvim_set_hl(0, "@markup.italic", { italic = true, fg = "#f38ba8", bg = "#313244" })
@@ -246,7 +247,21 @@ return {
     "m4xshen/hardtime.nvim",
     lazy = false,
     dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
+    opts = {
+      disabled_filetypes = { "NvimTree", "neo-tree", "neo-tree-popup" },
+      disable_mouse = false,
+      restricted_keys = {
+        ["j"] = { "x" },
+        ["k"] = { "x" },
+        ["l"] = { "x" },
+        ["h"] = { "x" },
+        ["gj"] = { "n", "x" },
+        ["gk"] = { "n", "x" },
+        ["<C-M>"] = { "n", "x" },
+        ["<C-N>"] = { "n", "x" },
+        ["<C-P>"] = { "n", "x" },
+      },
+    },
     config = function(_, opts)
       require("hardtime").setup(opts)
     end,
