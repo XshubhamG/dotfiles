@@ -1,3 +1,13 @@
+<!--toc:start-->
+
+- [📚 Table of Contents](#📚-table-of-contents)
+- [📦 Programs](#📦-programs)
+- [👀 Preview](#👀-preview)
+- [Quick Start](#quick-start)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  <!--toc:end-->
+
 <h1 align="center"> 🌟 Hyprland-Arch Config in Catppuccin_mocha</h1>
 
 ![Main Image](./assets/preview-fastfetch.png)
@@ -41,7 +51,7 @@ List of programs and tools I use
 | Visualizer        | [cava](github.com/karlstav/cava)                                                                                  |
 | Media Player      | [mpv](mpv.io)                                                                                                     |
 | Screenshot        | [flameshot](flameshot.org)                                                                                        |
-| Notes             | [Obsidian](obsidian.md)                                                                                           |
+| Notes             | [Obsidian](https://obsidian.md)                                                                                   |
 | pdf reader        | [zathura](pwmt.org/projects/zathura/)                                                                             |
 | Others            | [bat](github.com/sharkdp/bat) / [exa](github.com/ogham/exa) / [fd](github.com/sharkdp/fd) / [ripgrep](github.com) |
 
@@ -124,9 +134,9 @@ chmod +x install.sh
 ```
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
+ <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
 </p>
 
 <p align="center">
-	<a href="https://github.com/xshubhamg/xshubhamg/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+ <a href="https://github.com/xshubhamg/xshubhamg/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
 </p>
