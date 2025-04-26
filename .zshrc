@@ -196,7 +196,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # nvim select
 function nvims() {
-    items=("NvChad" "LazyVim" "Test_Vim")
+    items=("lazyvim" "lazyvim_dev" "test_vim")
     config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config ⇒" --height=~50% --layout=reverse --border --exit-0)
     if [[ -z $config ]]; then
         echo "Nothing selected"
