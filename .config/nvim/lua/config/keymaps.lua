@@ -23,6 +23,12 @@ keymap.set("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 -- Buffer Next
 keymap.set("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
+-- NvimTreeToggle
+keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "NvimTree" })
+
+-- NvimTreeFocus
+keymap.set("n", "<leader>tf", "<cmd>NvimTreeFocus<cr>", { desc = "NvimTree" })
+
 -- neovide
 if vim.g.neovide then
   vim.g.neovide_refresh_rate = 60
