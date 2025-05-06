@@ -1,30 +1,30 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [manager]
-ratio          = [ 1, 2, 3 ]
-sort_by        = "alphabetical"
+ratio = [1, 2, 3]
+sort_by = "alphabetical"
 sort_sensitive = false
-sort_reverse   = false
+sort_reverse = false
 sort_dir_first = true
-linemode       = "size"
-show_hidden    = false
-show_symlink   = true
-scrolloff      = 5
+linemode = "size"
+show_hidden = false
+show_symlink = true
+scrolloff = 5
 
 [preview]
-tab_size        = 2
-max_width       = 1200
-max_height      = 900
-cache_dir       = ""
-image_filter    = "triangle"
-image_quality   = 75
-sixel_fraction  = 15
-ueberzug_scale  = 1.25
-ueberzug_offset = [ 0, 0, 2, 2 ]
+tab_size = 2
+max_width = 1200
+max_height = 900
+cache_dir = ""
+image_filter = "triangle"
+image_quality = 75
+sixel_fraction = 15
+ueberzug_scale = 1.25
+ueberzug_offset = [0, 0, 1, 1]
 
 [opener]
 folder = [
-  { run = 'hyprctl dispatch exec "[float; size 60% 60%; center 1] nemo" "$@"', orphan = true, desc = "nemo", for = "linux" },
+  { run = 'hyprctl dispatch exec "[float; size 60% 60%; center 1] thunar" "$@"', orphan = true, desc = "thunar", for = "linux" },
   { run = '''fish -c "nvim "$1""''', block = true, desc = "neovim", for = "linux" },
   { run = 'kitty --detach nvim "$@"', orphan = true, desc = "neovim (detached)", for = "linux" },
   { run = '''fish -c "lazygit -p "$1""''', block = true, desc = "lazygit", for = "linux" },
@@ -53,10 +53,8 @@ image = [
   { run = 'krita "$@"', orphan = true, desc = "krita", for = "linux" },
   { run = 'satty --filename "$@"', orphan = true, desc = "satty", for = "linux" },
 ]
-video = [
-  { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
-  { run = 'mpv "$@"', orphan = true, desc = "mpv", for = "linux" },
-]
+video = [{ run = 'mpv "$@"', orphan = true, desc = "mpv", for = "linux" }]
+
 audio = [
   { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'mpv "$@"', orphan = true, desc = "mpv", for = "linux" },

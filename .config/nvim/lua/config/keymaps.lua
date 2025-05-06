@@ -5,6 +5,19 @@
 -- Keymaps
 local keymap = vim.keymap -- for consciseness
 
+keymap.set("v", "<C-j>", ":m '<-2<CR>gv=gv", { desc = "Move selected line(s) up" })
+keymap.set("v", "<C-k>", ":m '>+1<CR>gv=gv", { desc = "Move selected line(s) down" })
+
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
+
+keymap.set(
+  "n",
+  "<leader>r",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Replace word cursor is on globally" }
+)
+
 -- ciw
 keymap.set("n", "<C-c>", "ciw")
 
