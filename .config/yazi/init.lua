@@ -40,30 +40,16 @@ require("session"):setup({
 	sync_yanked = true,
 })
 
-require("searchjump"):setup({
-	unmatch_fg = catppuccin_palette.overlay0,
-	match_str_fg = catppuccin_palette.peach,
-	match_str_bg = catppuccin_palette.base,
-	first_match_str_fg = catppuccin_palette.lavender,
-	first_match_str_bg = catppuccin_palette.base,
-	lable_fg = catppuccin_palette.green,
-	lable_bg = catppuccin_palette.base,
-	only_current = false, -- only search the current window
-	show_search_in_statusbar = false,
-	auto_exit_when_unmatch = false,
-	enable_capital_lable = false,
-	search_patterns = {}, -- demo:{"%.e%d+","s%d+e%d+"}
-})
-
 require("yatline"):setup({
 	section_separator = { open = "", close = "" },
 	inverse_separator = { open = "", close = "" },
 	part_separator = { open = "", close = "" },
+	{ type = "coloreds", custom = false, name = "symlink" },
 
 	style_a = {
 		fg = catppuccin_palette.mantle,
 		bg_mode = {
-			normal = catppuccin_palette.blue,
+			normal = catppuccin_palette.lavender,
 			select = catppuccin_palette.mauve,
 			un_set = catppuccin_palette.red,
 		},
@@ -146,38 +132,25 @@ require("yatline"):setup({
 	},
 })
 
-require("yatline-githead"):setup({
-	show_branch = true,
-	branch_prefix = "",
-	branch_symbol = "",
-	branch_borders = "",
-
-	commit_symbol = " ",
-
-	show_stashes = true,
-	stashes_symbol = " ",
-
-	show_state = true,
-	show_state_prefix = true,
-	state_symbol = "󱅉",
-
-	show_staged = true,
-	staged_symbol = " ",
-
-	show_unstaged = true,
-	unstaged_symbol = " ",
-
-	show_untracked = true,
-	untracked_symbol = " ",
-
-	prefix_color = catppuccin_palette.pink,
-	branch_color = catppuccin_palette.pink,
-	commit_color = catppuccin_palette.mauve,
-	stashes_color = catppuccin_palette.teal,
-	state_color = catppuccin_palette.lavender,
-	staged_color = catppuccin_palette.green,
-	unstaged_color = catppuccin_palette.yellow,
-	untracked_color = catppuccin_palette.pink,
-})
-
 require("git"):setup()
+require("yatline-symlink"):setup()
+require("yatline-githead"):setup({
+	symlink_color = "white",
+})
+require("mime-ext"):setup({
+	-- Expand the existing filename database (lowercase), for example:
+	with_files = {
+		makefile = "text/makefile",
+		-- ...
+	},
+
+	-- Expand the existing extension database (lowercase), for example:
+	with_exts = {
+		mk = "text/makefile",
+		-- ...
+	},
+
+	-- If the mime-type is not in both filename and extension databases,
+	-- then fallback to Yazi's preset `mime` plugin, which uses `file(1)`
+	fallback_file1 = false,
+})

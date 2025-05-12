@@ -6,16 +6,21 @@ sort_by = "alphabetical"
 sort_sensitive = false
 sort_reverse = false
 sort_dir_first = true
+sort_translit = false
 linemode = "size"
 show_hidden = false
 show_symlink = true
 scrolloff = 5
+mouse_events = ["click", "scroll"]
+title_format = ""
 
 [preview]
+wrap = "no"
 tab_size = 2
 max_width = 1200
 max_height = 900
 cache_dir = ""
+image_delay = 30
 image_filter = "triangle"
 image_quality = 75
 sixel_fraction = 15
@@ -25,39 +30,26 @@ ueberzug_offset = [0, 0, 1, 1]
 [opener]
 folder = [
   { run = 'hyprctl dispatch exec "[float; size 60% 60%; center 1] thunar" "$@"', orphan = true, desc = "thunar", for = "linux" },
-  { run = '''fish -c "nvim "$1""''', block = true, desc = "neovim", for = "linux" },
-  { run = 'kitty --detach nvim "$@"', orphan = true, desc = "neovim (detached)", for = "linux" },
-  { run = '''fish -c "lazygit -p "$1""''', block = true, desc = "lazygit", for = "linux" },
-  { run = 'codium  "$@"', orphan = true, desc = "vscodium", for = "linux" },
-  { run = 'kitty "$@"', orphan = true, desc = "kitty", for = "linux" },
-  { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
 ]
 
-text = [
-  { run = '$EDITOR "$@"', block = true, desc = "$EDITOR", for = "linux" },
-  { run = 'nvim "$@"', block = true, desc = "neovim", for = "linux" },
-  { run = 'kitty --detach nvim "$@"', block = true, desc = "neovim (detached)", for = "linux" },
-  { run = 'codium  "$@"', orphan = true, desc = "vscodium", for = "linux" },
-  { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
-]
+text = [{ run = 'nvim "$@"', block = true, desc = "nvim", for = "linux" }]
 
 document = [
-  { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'zathura "$@"', orphan = true, desc = "zathura", for = "linux" },
-  { run = 'libreoffice "$@"', orphan = true, desc = "libreoffice", for = "linux" },
 ]
 
 image = [
-  { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
-  { run = 'qimgv "$@"', orphan = true, desc = "qimgv", for = "linux" },
-  { run = 'krita "$@"', orphan = true, desc = "krita", for = "linux" },
-  { run = 'satty --filename "$@"', orphan = true, desc = "satty", for = "linux" },
+  { run = 'imv-dir "$@"', orphan = true, desc = "imv-dir", for = "linux" },
 ]
+
 video = [{ run = 'mpv "$@"', orphan = true, desc = "mpv", for = "linux" }]
 
 audio = [
   { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'mpv "$@"', orphan = true, desc = "mpv", for = "linux" },
+]
+extract = [
+  { run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
 ]
 fallback = [
   { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
@@ -75,19 +67,24 @@ rules = [
   { mime = "inode/x-empty", use = "text" },
   { mime = "application/json", use = "text" },
 
-  { mime = "application/zip", use = "archive" },
-  { mime = "application/gzip", use = "archive" },
-  { mime = "application/x-bzip", use = "archive" },
-  { mime = "application/x-bzip2", use = "archive" },
-  { mime = "application/x-tar", use = "archive" },
-  { mime = "application/x-7z-compressed", use = "archive" },
-  { mime = "application/x-rar", use = "archive" },
+  { mime = "application/zip", use = "extract" },
+  { mime = "application/gzip", use = "extract" },
+  { mime = "application/x-bzip", use = "extract" },
+  { mime = "application/x-bzip2", use = "extract" },
+  { mime = "application/x-tar", use = "extract" },
+  { mime = "application/x-7z-compressed", use = "extract" },
+  { mime = "application/x-rar", use = "extract" },
   { mime = "application/pdf", use = "document" },
   { mime = "application/epub+zip", use = "document" },
   { mime = "application/x-mobipocket-ebook", use = "document" },
 
   { mime = "*", use = "fallback" },
 ]
+[[plugin.prepend_fetchers]]
+id = "mime"
+name = "*"
+run = "mime-ext"
+prio = "high"
 
 [[plugin.prepend_fetchers]]
 id = "git"
@@ -98,3 +95,11 @@ run = "git"
 id = "git"
 name = "*/"
 run = "git"
+
+[[plugin.prepend_previewers]]
+mime = "application/{,g}zip"
+run = "lsar"
+
+[[plugin.prepend_previewers]]
+mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}"
+run = "lsar"

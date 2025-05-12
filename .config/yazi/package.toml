@@ -1,12 +1,17 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "b12a9ab"
+rev = "55bf699"
 hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
-rev = "90e0284"
-hash = "8d4cb2dfadcbda045ddaa5c274441f9c"
+rev = "2ecf715"
+hash = "38e2ea4703ea606d4eef574e8e8b8fd7"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "55bf699"
+hash = "e0ada736ea676c2bbb3ec705a49526ef"
 
 [[plugin.deps]]
 use = "imsi32/yatline-githead"
@@ -14,21 +19,19 @@ rev = "3b0eb7c"
 hash = "bfd30c396bbe2af526cb949d97ce3dcf"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:smart-filter"
-rev = "b12a9ab"
-hash = "f0c4b41b5d19a3144958383333eff6e7"
+use = "yazi-rs/plugins:toggle-pane"
+rev = "55bf699"
+hash = "f3853bbdd1da2fad09d059ab5464abfd"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:hide-preview"
-rev = "b12a9ab"
-hash = "53f826884e2c7e521cecc492a7f31d7e"
+use = "yazi-rs/plugins:mime-ext"
+rev = "55bf699"
+hash = "5e24c167e9ae9a203a48f2a438b8c705"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:git"
-rev = "b12a9ab"
-hash = "e0ada736ea676c2bbb3ec705a49526ef"
+use = "yazi-rs/plugins:lsar"
+rev = "55bf699"
+hash = "d0950c172ce352d31554ad6db8226494"
 
-[[flavor.deps]]
-use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "68326b4"
-hash = "2ac87e1b3a61f5887472899e86535d29"
+[flavor]
+deps = []

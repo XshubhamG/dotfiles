@@ -114,8 +114,9 @@ export EDITOR=nvim
 # -------------- #
 #    Aliases     #
 # -------------- #
-# alias vi="nvim"
+
 alias vi="neovide"
+alias code="cursor --ozone-platform=wayland"
 alias vo="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 alias tldr="tldr --list | fzf-tmux --preview 'tldr {1} --color=always' --preview-window=right,70% | xargs tldr"
 alias lz="lazygit"
@@ -138,6 +139,10 @@ alias alaconfig="vi ~/dotfiles/.config/alacritty/alacritty.yml"
 alias tmuxconfig="vi ~/dotfiles/.config/tmux/tmux.conf"
 alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+
+# help with bat
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # tmux alias
 alias tmux-attach="tmux attach -t"
@@ -209,7 +214,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # nvim select
 function nvims() {
-    items=("lazyvim" "lazyvim_dev" "test_vim")
+    items=("lazyvim" "default_vim")
     config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config ⇒" --height=~50% --layout=reverse --border --exit-0)
     if [[ -z $config ]]; then
         echo "Nothing selected"

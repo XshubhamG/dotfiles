@@ -14,6 +14,7 @@
     "memory",
     "network",
     "backlight",
+    "pulseaudio",
     "battery",
     "custom/power",
   ],

@@ -11,6 +11,8 @@ keymap.set("v", "<C-k>", ":m '>+1<CR>gv=gv", { desc = "Move selected line(s) dow
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
 
+keymap.set("n", "<leader>fi", ":set filetype=ini<CR>", { desc = "Set filetype to ini" })
+
 keymap.set(
   "n",
   "<leader>r",
