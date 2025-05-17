@@ -20,17 +20,11 @@
   ],
 
   "hyprland/window": {
-    "format": "➡ {}",
-    "rewrite": {
-      "(.*) — Mozilla Firefox": " $1",
-      "(.*) — Brave": " $1",
-      "(.*) - zsh": " [$1]",
-    },
+    "format": "  {}",
     "separate-outputs": true,
   },
 
   "backlight": {
-    // "device": "acpi_video1",
     "format": "{percent}% {icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
   },

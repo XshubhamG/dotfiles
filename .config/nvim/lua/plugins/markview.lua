@@ -14,7 +14,7 @@ return {
         code_blocks = {
           enable = true,
 
-          style = "block",
+          style = "simple",
 
           label_direction = "right",
 
