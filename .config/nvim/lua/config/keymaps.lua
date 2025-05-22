@@ -20,6 +20,9 @@ keymap.set(
   { desc = "Replace word cursor is on globally" }
 )
 
+-- toggle copilot plugin
+keymap.set("n", "<leader>gc", ":Copilot disable<CR>", { desc = "Disable Copilot" })
+
 -- ciw
 keymap.set("n", "<C-c>", "ciw")
 

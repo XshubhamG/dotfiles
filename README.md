@@ -1,18 +1,18 @@
 <!--toc:start-->
 
-- [📚 Table of Contents](#📚-table-of-contents)
-- [📦 Programs](#📦-programs)
-- [👀 Preview](#👀-preview)
-- [Quick Start](#quick-start)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  <!--toc:end-->
+- [🌟 Hyprland-Arch Config in Catppuccin\_mocha](#-hyprland-arch-config-in-catppuccin_mocha)
+  - [📚 Table of Contents](#-table-of-contents)
+  - [📦 Programs](#-programs)
+  - [👀 Preview](#-preview)
+  - [Quick Start](#quick-start)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 
-<h1 align="center"> 🌟 Hyprland-Arch Config in Catppuccin_mocha</h1>
+# 🌟 Hyprland-Arch Config in Catppuccin_mocha
 
 ![Main Image](./assets/preview-fastfetch.png)
 
-A decent configuration setup for my personal [arch linux](https://archlinux.org/) desktop with [hypland](https://hyprland.org/) window manager in my favourite theme [catppuccin](https://github.com/catppuccin/catppuccin)
+A decent configuration setup for my personal [Arch Linux](https://archlinux.org/) desktop with [Hyprland](https://hyprland.org/) window manager in my favourite theme [Catppuccin](https://github.com/catppuccin/catppuccin)
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png"/>
@@ -20,98 +20,94 @@ A decent configuration setup for my personal [arch linux](https://archlinux.org/
 
 ## 📚 Table of Contents
 
-- [Programs](#📦-programs)
-- [Preview](#👀-preview)
-- [Installation](#installation)
-- [License](#license)
+- [🌟 Hyprland-Arch Config in Catppuccin\_mocha](#-hyprland-arch-config-in-catppuccin_mocha)
+  - [📚 Table of Contents](#-table-of-contents)
+  - [📦 Programs](#-programs)
+  - [👀 Preview](#-preview)
+  - [Quick Start](#quick-start)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 
 ## 📦 Programs
 
-List of programs and tools I use
+List of programs and tools I use:
 
-| Component         | Program                                                                                                           |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Window Manager 🪟 | [Hyprland](github.com/hyprwm/Hyprland)                                                                            |
-| Terminal          | [Kitty](github.com/kovidgoyal/kitty) / [warp](app.warp.dev)                                                       |
-| Shell / prompt    | [zsh](wiki.archlinux.org/title/Zsh) / [starship](starship.rs)                                                     |
-| Multiplexer       | [tmux](github.com/tmux/tmux)                                                                                      |
-| Font              | [JetBrains Mono](jetbrains.com/lp/mono/)                                                                          |
-| Fetch             | [fastfetch](github.com/fastfetch-cli/fastfetch) / [pokeget](github.com/talwat/pokeget-rs)                         |
-| File Manager      | [yazi](yazi-rs.github.io/) / [thunar](wiki.archlinux.org/title/Thunar)                                            |
-| Editor            | [neovim](neovim.io) / [nvChad](github.com/nvChad) /[vscode](wiki.archlinux.org/title/Visual_Studio_Code)          |
-| Browser           | [Brave](brave.com) / [zen](zen-browser.app)                                                                       |
-| Discord           | [Vesktop](github.com/1j01/vesktop)                                                                                |
-| Bar               | [waybar](github.com/Alexays/Waybar)                                                                               |
-| Launcher          | [rofi](github.com/davatorium/rofi)                                                                                |
-| Colorscheme       | [catppuccin](github.com/catppuccin/catppuccin)                                                                    |
-| Notification      | [dunst](dunst-project.org)                                                                                        |
-| Lockscreen        | [hyprlock](github.com/hyprwm/hyprlock)                                                                            |
-| Display Manager   | [sddm](wiki.archlinux.org/title/sddm)                                                                             |
-| Music Player      | [Spotify](spotify.com) / [spicetify](spicetify.app)                                                               |
-| Visualizer        | [cava](github.com/karlstav/cava)                                                                                  |
-| Media Player      | [mpv](mpv.io)                                                                                                     |
-| Screenshot        | [flameshot](flameshot.org)                                                                                        |
-| Notes             | [Obsidian](https://obsidian.md)                                                                                   |
-| pdf reader        | [zathura](pwmt.org/projects/zathura/)                                                                             |
-| Others            | [bat](github.com/sharkdp/bat) / [exa](github.com/ogham/exa) / [fd](github.com/sharkdp/fd) / [ripgrep](github.com) |
+| Component | Program                                                                                                   |
+| :-------- | :-------------------------------------------------------------------------------------------------------- |
+| 🪟         | [Hyprland](https://github.com/hyprwm/Hyprland)                                                            |
+| 💻         | [Kitty](https://github.com/kovidgoyal/kitty) / [Warp](https://app.warp.dev)                               |
+| 🐚         | [Zsh](https://wiki.archlinux.org/title/Zsh) / [Starship](https://starship.rs)                             |
+| 🎭         | [Tmux](https://github.com/tmux/tmux)                                                                      |
+| 🔤         | [JetBrains Mono](https://jetbrains.com/lp/mono/) / [Dank Mono](https://dank.sh/)                          |
+| 🖥️         | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) / [Pokeget](https://github.com/talwat/pokeget-rs) |
+| 📁         | [Yazi](https://yazi-rs.github.io/) / [Thunar](https://wiki.archlinux.org/title/Thunar)                    |
+| 📝         | [Neovim](https://neovim.io) / [NvChad](https://github.com/nvChad) / [Cursor](https://cursor.sh)           |
+| 🌐         | [Brave](https://brave.com) / [Zen](https://zen-browser.app)                                               |
+| 💬         | [Discord](https://discord.com) / [BetterDiscord](https://betterdiscord.app)                               |
+| 📊         | [Waybar](https://github.com/Alexays/Waybar)                                                               |
+| 🔍         | [Rofi](https://github.com/davatorium/rofi)                                                                |
+| 🎨         | [Catppuccin](https://github.com/catppuccin/catppuccin)                                                    |
+| 🔔         | [Dunst](https://dunst-project.org)                                                                        |
+| 🔒         | [Hyprlock](https://github.com/hyprwm/hyprlock)                                                            |
+| 🖥️         | [SDDM](https://wiki.archlinux.org/title/sddm)                                                             |
+| 🎵         | [Spotify](https://spotify.com) / [Spicetify](https://spicetify.app)                                       |
+| 📈         | [Cava](https://github.com/karlstav/cava)                                                                  |
+| 🎬         | [MPV](https://mpv.io)                                                                                     |
+| 📸         | [Flameshot](https://flameshot.org)                                                                        |
+| 📓         | [Obsidian](https://obsidian.md)                                                                           |
+| 📄         | [Zathura](https://pwmt.org/projects/zathura/)                                                             |
+
+> [!NOTICE]
+> [Bat](https://github.com/sharkdp/bat) /
+> [Exa](https://github.com/ogham/exa) /
+> [Fd](https://github.com/sharkdp/fd) /
+> [Ripgrep](https://github.com) |
 
 ## 👀 Preview
 
 <details>
     <summary>Desktop</summary>
-
-![Preview-1](./assets/preview-1.png)
-
+    <img src="./assets/preview-1.png" alt="Desktop Preview"/>
 </details>
 
 <details>
-    <summary>fastfetch</summary>
-
-![Preview-fastfetch](./assets/preview-fastfetch.png)
-
+    <summary>Fastfetch</summary>
+    <img src="./assets/preview-fastfetch.png" alt="Fastfetch Preview"/>
 </details>
 
 <details>
-<summary>Neovim</summary>
-
-![Preview-nvim](./assets/preview-nvim.png)
-
+    <summary>Neovim</summary>
+    <img src="./assets/preview-nvim.png" alt="Neovim Preview"/>
 </details>
 
 <details>
-    <summary>spotify</summary>
-
-![Preview-spotify](./assets/preview-spotify.png)
-
+    <summary>Spotify</summary>
+    <img src="./assets/preview-spotify.png" alt="Spotify Preview"/>
 </details>
+
 <details>
     <summary>Browser</summary>
-
-![Preview-brave](./assets/preview-brave.png)
-
+    <img src="./assets/preview-brave.png" alt="Browser Preview"/>
 </details>
 
 <details>
-    <summary>File manager</summary>
-
-![Preview-yazi](./assets/preview-yazi.png)
-
+    <summary>File Manager</summary>
+    <img src="./assets/preview-yazi.png" alt="File Manager Preview"/>
 </details>
+
 <details>
-    <summary>Disord</summary>
-
-![Preview-discord](./assets/preview-discord.png)
-
+    <summary>Discord</summary>
+    <img src="./assets/preview-discord.png" alt="Discord Preview"/>
 </details>
 
 ## Quick Start
 
 ### Prerequisites
 
-This configuration is only for Arch linux. Make sure you have these packages installed:
+This configuration is only for Arch Linux. Make sure you have these packages installed:
 
-```zsh
-# install required packages
+```bash
+# Install required packages
 sudo pacman -S git stow base-devel
 ```
 
@@ -119,7 +115,7 @@ sudo pacman -S git stow base-devel
 
 Clone and setup the configuration:
 
-```zsh
+```bash
 # Clone the repository
 git clone https://github.com/xshubhamg/dotfiles ~
 
@@ -134,9 +130,11 @@ chmod +x install.sh
 ```
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
+    <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
 </p>
 
 <p align="center">
- <a href="https://github.com/xshubhamg/xshubhamg/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+    <a href="https://github.com/xshubhamg/xshubhamg/LICENSE">
+        <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/>
+    </a>
 </p>

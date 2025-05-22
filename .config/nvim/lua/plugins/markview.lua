@@ -9,41 +9,11 @@ return {
 
     require("markview").setup({
       markdown = {
-        headings = presets.headings.arrowed,
+        headings = presets.headings.slanted,
         horizontal_rules = presets.horizontal_rules.thick,
         code_blocks = {
           enable = true,
-
           style = "simple",
-
-          label_direction = "right",
-
-          border_hl = "MarkviewCode",
-          info_hl = "MarkviewCodeInfo",
-
-          min_width = 60,
-          pad_amount = 2,
-          pad_char = " ",
-
-          sign = true,
-
-          default = {
-            block_hl = "MarkviewCode",
-            pad_hl = "MarkviewCode",
-          },
-
-          ["diff"] = {
-            block_hl = function(_, line)
-              if line:match("^%+") then
-                return "MarkviewPalette4"
-              elseif line:match("^%-") then
-                return "MarkviewPalette1"
-              else
-                return "MarkviewCode"
-              end
-            end,
-            pad_hl = "MarkviewCode",
-          },
         },
       },
 

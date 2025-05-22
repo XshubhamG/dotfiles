@@ -3,7 +3,7 @@ configuration{
   lines: 5;
   font: "JetBrainsMono Nerd Font";
   show-icons: true;
-  icon-theme: "Zafiro-Nord-Black-Blue";
+  icon-theme: "Zafiro-Catppuccin-Icon";
   terminal: "kitty";
   drun-display-format: "{icon} {name}";
   location: 0;
