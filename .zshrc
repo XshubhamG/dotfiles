@@ -17,8 +17,6 @@ export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 export CARGO_HOME=${CARGO_HOME:="$XDG_DATA_HOME/cargo"}
 export DOCKER_CONFIG=${DOCKER_CONFIG:="$XDG_CONFIG_HOME/docker"}
 export GOPATH=${GOPATH:="$XDG_DATA_HOME/go"}
-export NB_DIR=${NB_DIR:="$XDG_DATA_HOME/nb"}
-export NBRC_PATH=${NBRC_PATH:="$XDG_CONFIG_HOME/nbrc"}
 export GTK2_RC_FILES=${GTK2_RC_FILES:="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"}
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export XDG_DATA_DIRS=${XDG_DATA_DIRS:="/usr/share/applications"}
@@ -237,3 +235,5 @@ export PATH=$PATH:/home/shubham/.spicetify
 # uv python
 . "$HOME/.local/share/../bin/env"
 eval "$(uv generate-shell-completion zsh)"
+export PATH="/home/shubham/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/shubham/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

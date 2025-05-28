@@ -40,26 +40,25 @@
 [color "status"]
 	added = green normal         # Green for added files
 	changed = yellow normal      # Yellow for changed files
-	untracked = red dim          # Dimmed Red for untracked files
+	untracked = red           # Dimmed Red for untracked files
   ignored = white normal       # White for ignored files
   conflicted = red bold        # Bold Red for conflicted files
 	branch = blue normal italic  # Blue italic for current branch in status
 	updated = green normal       # Green for updated files
 	localbranch = magenta italic # Magenta italic for local branches
-	header = cyan normal         # Cyan for headers
 	remotebranch = cyan italic   # Cyan italic for remote branches
-	nobranch = red italic        # Red italic for detached HEAD
 	unmerged = red normal        # Red for unmerged files
 
 [color "diff"]
-	meta = yellow bold           # Bold Yellow for diff metadata
-	frag = magenta bold          # Bold Magenta for fragments
-	old = red bold               # Bold Red for removed lines
-	new = green bold             # Bold Green for added lines
-	whitespace = red reverse     # Reversed Red for whitespace errors
+	meta = black bold
+	frag = magenta
+	old = red bold
+	new = green bold
+  context = white
+	whitespace = yellow reverse
 
 [diff]
-	colorMoved = zebra           # Zebra striping for moved lines in diffs
+	colorMoved = zebra
   tool = nvimdiff
 
 [color "interactive"]

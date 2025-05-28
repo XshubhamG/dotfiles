@@ -22,6 +22,16 @@
   "hyprland/window": {
     "format": "  {}",
     "separate-outputs": true,
+    "rewrite": {
+      "(.*)Brave": "$1 ",
+      "(.*) - Visual Studio Code": "$1 󰨞",
+      "(.*) — Thunar": "$1 󰉋",
+      "(.*)Spotify.*": "$1 Spotify 󰓇",
+      "(.*) - Discord": "$1  ",
+      "(.*?)-\\s*YouTube(.*)": "$1󰗃 ",
+      "(.*?\\s)YouTube(.*)": "$1YouTube 󰗃 ",
+    },
+    "max-length": 50,
   },
 
   "backlight": {

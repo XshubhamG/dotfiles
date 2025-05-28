@@ -1,0 +1,46 @@
+# Useful Icons Reference:
+# System:  󰣇  󰊠  󰘳  󰇄   󰠥  󰈺
+# Terminal:  󰆍  󰟀
+# Files: 󰉋 󱂵 󰉖 󰝰 󱃖
+# Development: 󰜨 󰡄  󰊤  󰊢  󰛦
+# Media: 󰎈 󰽰 󰨜  󰻃 󱧺  󰵆  󱉺 󰲸
+# Network: 󰛳 󰀂  󰖟 󱘖 󱊝  󰓾  󰎆
+# Git: 󰊢
+# Status: ✓ ✗ 󰄬  󰘳 󰘪 󰗠
+# Weather: 󰖕  󰼱  󰖔
+# Others: 󰃭 󰃮 󰃰 󰃟 󰃵 󰃸 󰃻 󰃾 󰄀 󰨊
+# Linux: 
+
+[default_session]
+name = "Home 󰣇 "
+path = "~"
+startup_command = "fastfetch"
+
+[[session]]
+name = "Downloads 󰇚 "
+path = "~/Downloads"
+startup_command = "yazi"
+
+[[session]]
+name = "dotfiles 󰊠"
+path = "~/dotfiles"
+
+[[session]]
+name = "projects 󱌢 "
+path = "~/code"
+disable_startup_command = true
+
+[[session]]
+name = "git 󰊢"
+path = "~/git"
+disable_startup_command = true
+
+[[session]]
+name = "pictures 󰄀"
+path = "~/Pictures"
+startup_command = "yazi"
+
+[[session]]
+name = "Notes 󰊤"
+path = "~/Notes"
+startup_command = "nvim"

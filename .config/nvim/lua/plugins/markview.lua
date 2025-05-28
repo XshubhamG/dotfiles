@@ -15,6 +15,21 @@ return {
           enable = true,
           style = "simple",
         },
+        tables = {
+          enable = true,
+        },
+        list_items = {
+          shift_width = 2,
+          marker_minus = {
+            text = " ",
+          },
+          marker_star = {
+            text = " ",
+          },
+          marker_plus = {
+            text = " ",
+          },
+        },
       },
 
       preview = {
