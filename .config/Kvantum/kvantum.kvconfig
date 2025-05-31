@@ -1,5 +1,5 @@
 [General]
-theme=catppuccin-mocha-blue
+theme=catppuccin-mocha-red
 
 [Applications]
-catppuccin-mocha-blue=brave-browser
+catppuccin-mocha-red=brave-browser

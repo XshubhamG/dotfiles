@@ -1,7 +1,7 @@
 configuration{
   modi: "run,drun,window,emoji,calc";
   lines: 5;
-  font: "JetBrainsMono Nerd Font";
+  font: "Mali";
   show-icons: true;
   icon-theme: "Zafiro-Catppuccin-Icon";
   terminal: "kitty";

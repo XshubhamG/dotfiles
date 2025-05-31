@@ -14,7 +14,6 @@
 [default_session]
 name = "Home 󰣇 "
 path = "~"
-startup_command = "fastfetch"
 
 [[session]]
 name = "Downloads 󰇚 "

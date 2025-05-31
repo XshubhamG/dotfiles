@@ -11,7 +11,7 @@
     grey: #6c7086;
 
     width: 600;
-    font: "JetBrainsMono Nerd Font 14";
+    font: "Mali Regular 14";
 }
 
 element-text, element-icon , mode-switcher {

@@ -1,6 +1,6 @@
 [%General]
 author=elkrien based on Arc Dark style
-comment=Catppuccin-Mocha-Blue
+comment=Catppuccin-Mocha-Red
 combo_focus_rect=true
 spread_menuitems=true
 left_tabs=true
@@ -80,8 +80,8 @@ light.color=#45475A
 mid.light.color=#45475A
 dark.color=#181825
 mid.color=#181825
-highlight.color=#89B4FA
-inactive.highlight.color=#89B4FA
+highlight.color=#F38BA8
+inactive.highlight.color=#F38BA8
 text.color=#CDD6F4
 window.text.color=#CDD6F4
 button.text.color=#CDD6F4
@@ -271,7 +271,7 @@ frame.left=1
 frame.right=1
 frame.expansion=0
 text.normal.color=#CDD6F4
-text.focus.color=#89B4FA
+text.focus.color=#F38BA8
 text.press.color=#CDD6F4
 text.toggle.color=#CDD6F4
 indicator.element=harrow
@@ -293,8 +293,8 @@ frame.left=4
 frame.right=4
 text.normal.color=#CDD6F4
 text.focus.color=#CDD6F4
-text.press.color=#89B4FA
-text.toggle.color=#89B4FA
+text.press.color=#F38BA8
+text.toggle.color=#F38BA8
 text.bold=false
 
 [MenuBar]
