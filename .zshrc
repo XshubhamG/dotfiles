@@ -85,7 +85,8 @@ zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
-source ~/.zcolors
+source ~/dotfiles/manual-zsh-plugins/zcolors/zcolors.plugin.zsh
+source ~/.zcolor
 
 # -------------- #
 #     Plugins    #
@@ -100,7 +101,7 @@ zinit snippet OMZP::git
 # -------------- #
 export PATH="$PATH:~/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/go/bin"
+# export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.local/share/cargo/bin"
 export PATH="$PATH:$HOME/.local/share/go/bin"
 export PATH="$PATH:$HOME/.config/emacs/bin"
@@ -114,14 +115,13 @@ export EDITOR=nvim
 # -------------- #
 
 alias vi="neovide"
-alias code="cursor --ozone-platform=wayland"
-alias vo="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+alias code="cursor --ozone-platform=wayland &"
+# alias vo="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 alias tldr="tldr --list | fzf-tmux --preview 'tldr {1} --color=always' --preview-window=right,70% | xargs tldr"
 alias lz="lazygit"
 # alias rmdir="rm -r"
 alias rm="trash"
 alias ncdu="ncdu --color dark"
-alias rr="ranger"
 alias tmux="tmux -u"
 alias printalias="alias | fzf"
 alias printenv="printenv | fzf"
@@ -133,7 +133,6 @@ alias vconfig="vi ~/dotfiles/.config/nvim/"
 alias zconfig="vi ~/dotfiles/.zshrc"
 alias bashconfig="vi ~/dotfiles/.bashrc"
 alias dotfiles="vi ~/dotfiles"
-alias alaconfig="vi ~/dotfiles/.config/alacritty/alacritty.yml"
 alias tmuxconfig="vi ~/dotfiles/.config/tmux/tmux.conf"
 alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
@@ -162,16 +161,6 @@ alias l.='exa -a | grep -E "^\."'
 alias lt="exa -aT --icons --color=always --level=2"
 
 alias pipes='/usr/bin/pipes-rs'
-
-# ----------- #
-#   thefuck   #
-# ----------- #
-eval $(thefuck --alias)
-
-# ------------ #
-#  info-fetch  #
-# ------------ #
-# fastfetch
 
 # ------------- #
 #     FZF       #
@@ -228,7 +217,7 @@ bindkey -e
 bindkey -s ^a "nvims\n"
 bindkey "^p" history-search-backward
 bindkey "^n" history-search-forward
-. "/home/shubham/.deno/env"
+# . "/home/shubham/.deno/env"
 
 export PATH=$PATH:/home/shubham/.spicetify
 
@@ -236,4 +225,3 @@ export PATH=$PATH:/home/shubham/.spicetify
 . "$HOME/.local/share/../bin/env"
 eval "$(uv generate-shell-completion zsh)"
 export PATH="/home/shubham/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/shubham/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

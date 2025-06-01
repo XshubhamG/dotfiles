@@ -24,53 +24,70 @@
 	diff = true
 
 [color "remote"]
-	hint = white dim            # Subtle hint (using white dimmed)
-	success = green normal      # Green for success
-	error = red normal          # Red for errors
-	warning = yellow normal     # Yellow for warnings
+	hint = normal dim
+	success = 2 normal
+	error = 1 normal
+	warning = 3 normal
 
 [color "branch"]
-  current = yellow reverse     # Yellow reversed for current branch
-	local = yellow               # Yellow for local branches
-	remote = green               # Green for remote branches
+	current = 6 normal reverse
+	local = 6 normal
+	remote = 5 normal
   tracking = magenta normal    # Magenta for tracking branches
-	plain = cyan                 # Cyan for plain branches
-	upstream = blue              # Blue for upstream branches
+	plain = 6 normal
+	upstream = 5 normal
 
 [color "status"]
-	added = green normal         # Green for added files
-	changed = yellow normal      # Yellow for changed files
-	untracked = red           # Dimmed Red for untracked files
+	added = 10 normal
+	changed = 11 normal
+	untracked = normal dim
   ignored = white normal       # White for ignored files
   conflicted = red bold        # Bold Red for conflicted files
-	branch = blue normal italic  # Blue italic for current branch in status
-	updated = green normal       # Green for updated files
-	localbranch = magenta italic # Magenta italic for local branches
-	remotebranch = cyan italic   # Cyan italic for remote branches
-	unmerged = red normal        # Red for unmerged files
+	branch = 6 normal
+	updated = 10 normal
+	localbranch = 6 normal
+	remotebranch = 5 normal
+	unmerged = 9 normal
+	header = normal
+	nobranch = 1 normal italic
 
 [color "diff"]
-	meta = black bold
-	frag = magenta
-	old = red bold
-	new = green bold
-  context = white
-	whitespace = yellow reverse
+	meta = normal dim
+	frag = normal dim
+	old = 7 1
+	new = 15 2
+	context = normal
+	whitespace = normal 9
+	commit = 3 normal
+	newMoved = 15 3
+	oldMovedAlternativeDimmed = 7 5 dim
+	oldMovedAlternative = 7 5
+	contextBold = normal bold
+	newBold = 15 2 bold
+	oldMoved = 7 3
+	oldBold = 7 1 bold
+	newMovedDimmed = 15 3 dim
+	func = normal dim
+	newDimmed = 15 2 dim
+	newMovedAlternative = 15 5
+	newMovedAlternativeDimmed = 15 5 dim
+	oldMovedDimmed = 7 3 dim
+	oldDimmed = 7 1 dim
 
 [diff]
 	colorMoved = zebra
   tool = nvimdiff
 
 [color "interactive"]
-	header = cyan bold           # Cyan for headers in interactive mode
-	prompt = blue bold           # Blue for prompts
-	help = red dim               # Dimmed Red for help text
-	error = red italic           # Red italic for errors
+	header = normal dim bold
+	prompt = 15 4
+	help = normal dim
+	error = 1 normal italic
 
 [color "decorate"]
-	branch = blue normal         # Blue for branch decorations
-	tag = yellow normal          # Yellow for tag decorations
-	remotebranch = magenta normal# Magenta for remote branch decorations
-	stash = white dim            # Dimmed White for stash
-	grafted = red italic         # Red italic for grafted commits
-	HEAD = blue italic           # Blue italic for HEAD decorations
+	branch = 6 normal
+	tag = 3 normal
+	remotebranch = 5 normal
+	stash = normal dim
+	grafted = 1 normal italic
+	HEAD = 6 normal italic
