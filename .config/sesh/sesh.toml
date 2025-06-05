@@ -16,6 +16,11 @@ name = "Home 󰣇 "
 path = "~"
 
 [[session]]
+name = "Home 󰣇 "
+path = "~"
+disable_startup_command = true
+
+[[session]]
 name = "Downloads 󰇚 "
 path = "~/Downloads"
 startup_command = "yazi"

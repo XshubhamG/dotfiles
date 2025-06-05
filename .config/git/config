@@ -7,87 +7,71 @@
 	defaultBranch = main
 
 [core]
+  compression = 9
   editor = nvim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	pager = bat --paging=always
+
+[advice]
+  addEmptyPathspec = false
+  pushNonFastForward = false
+  statusHints = false
+
+[diff]
+  context = 3
+  renames = copies
+  interHunkContent = 10
+
+[blame]
+    coloring = highlightRecent
+    date = relative
 
 [push]
   autoSetupRemote = true
   default = current
 
+[log]
+  abbrevCommit = true
+  graphColors = blue, yellow, cyan, magenta, green, red
+
 [rerere]
 	enabled = 1
 	autoupdate = 1
 
-[color]
-  ui = auto
-	diff = true
-
-[color "remote"]
-	hint = normal dim
-	success = 2 normal
-	error = 1 normal
-	warning = 3 normal
-
-[color "branch"]
-	current = 6 normal reverse
-	local = 6 normal
-	remote = 5 normal
-  tracking = magenta normal    # Magenta for tracking branches
-	plain = 6 normal
-	upstream = 5 normal
-
 [color "status"]
-	added = 10 normal
-	changed = 11 normal
-	untracked = normal dim
-  ignored = white normal       # White for ignored files
-  conflicted = red bold        # Bold Red for conflicted files
-	branch = 6 normal
-	updated = 10 normal
-	localbranch = 6 normal
-	remotebranch = 5 normal
-	unmerged = 9 normal
-	header = normal
-	nobranch = 1 normal italic
-
-[color "diff"]
-	meta = normal dim
-	frag = normal dim
-	old = 7 1
-	new = 15 2
-	context = normal
-	whitespace = normal 9
-	commit = 3 normal
-	newMoved = 15 3
-	oldMovedAlternativeDimmed = 7 5 dim
-	oldMovedAlternative = 7 5
-	contextBold = normal bold
-	newBold = 15 2 bold
-	oldMoved = 7 3
-	oldBold = 7 1 bold
-	newMovedDimmed = 15 3 dim
-	func = normal dim
-	newDimmed = 15 2 dim
-	newMovedAlternative = 15 5
-	newMovedAlternativeDimmed = 15 5 dim
-	oldMovedDimmed = 7 3 dim
-	oldDimmed = 7 1 dim
-
-[diff]
-	colorMoved = zebra
-  tool = nvimdiff
-
-[color "interactive"]
-	header = normal dim bold
-	prompt = 15 4
-	help = normal dim
-	error = 1 normal italic
+  added = green
+  changed = magenta
+  untracked = yellow dim
+  deleted = red
+  unmerged = cyan
+  branch = blue
 
 [color "decorate"]
-	branch = 6 normal
-	tag = 3 normal
-	remotebranch = 5 normal
-	stash = normal dim
-	grafted = 1 normal italic
-	HEAD = 6 normal italic
+  HEAD = red
+  branch = blue
+  tag = yellow
+  remoteBranch = magenta
+
+[color "blame"]
+  highlightRecent = black bold,1 year ago,white,1 month ago,default,7 days ago,blue
+
+[color "branch"]
+	current = magenta
+	local = default
+	remote = yellow
+	plain = blue
+	upstream = green
+
+[color "diff"]
+  meta = black bold
+  frag = magenta 
+  context = normal
+  whitespace = yellow reverse
+  old = red
+
+
+[url "git@github.com:xshubhamg/"]
+  insteadOf = "sg:"
+
+[url "git@github.com:"]
+  insteadOf = "gh:"

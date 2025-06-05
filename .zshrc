@@ -3,7 +3,7 @@
 # --------------- #
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Download zinit, if it's not there yet
+#  Download zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
     mkdir -p "$(dirname $ZINIT_HOME)"
     git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -109,6 +109,7 @@ export PATH="$PATH:$HOME/.config/emacs/bin"
 export MANPAGER='nvim +Man!'
 export VISUAL=nvim
 export EDITOR=nvim
+export PAGER=bat
 
 # -------------- #
 #    Aliases     #
@@ -116,16 +117,14 @@ export EDITOR=nvim
 
 alias vi="neovide"
 alias code="cursor --ozone-platform=wayland &"
-# alias vo="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 alias tldr="tldr --list | fzf-tmux --preview 'tldr {1} --color=always' --preview-window=right,70% | xargs tldr"
 alias lz="lazygit"
-# alias rmdir="rm -r"
 alias rm="trash"
 alias ncdu="ncdu --color dark"
-alias tmux="tmux -u"
+alias tnew='tmux new -s "$(basename "$PWD")"'
 alias printalias="alias | fzf"
 alias printenv="printenv | fzf"
-alias fastfetch="pokeget random --hide-name | fastfetch --file -"
+alias ff="pokeget random --hide-name | fastfetch --file -"
 alias spotify="spotify --ozone-platform=wayland"
 
 # config files
