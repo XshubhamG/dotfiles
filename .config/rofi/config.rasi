@@ -1,5 +1,5 @@
 configuration{
-  modi: "run,drun,window,emoji,calc";
+  modi: "run,drun,window,emoji";
   lines: 5;
   font: "Mali";
   show-icons: true;
@@ -12,7 +12,6 @@ configuration{
   display-drun: "   Apps ";
   display-run: "   Run ";
   display-window: "  window";
-  display-calc: "󰪚  calc";
   display-emoji: "󰞅  emoji";
   sidebar-mode: true;
 }
