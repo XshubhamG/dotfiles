@@ -12,6 +12,9 @@
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	pager = bat --paging=always
 
+[commit]
+  template = ~/dotfiles/.config/git/template
+
 [advice]
   addEmptyPathspec = false
   pushNonFastForward = false

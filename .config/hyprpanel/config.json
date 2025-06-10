@@ -399,8 +399,14 @@
   "theme.bar.buttons.padding_x": "0.8rem",
   "bar.layouts": {
     "0": {
-      "left": ["dashboard", "workspaces"],
-      "middle": ["clock", "media"],
+      "left": [
+        "dashboard",
+        "workspaces"
+      ],
+      "middle": [
+        "clock",
+        "media"
+      ],
       "right": [
         "systray",
         "updates",
@@ -468,7 +474,9 @@
   "bar.network.truncation": false,
   "theme.bar.buttons.bluetooth.enableBorder": false,
   "theme.font.label": "Mali",
-  "bar.customModules.storage.paths": ["/"],
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
   "theme.bar.scaling": 85,
   "theme.bar.menus.menu.dashboard.scaling": 80,
   "theme.notification.scaling": 80,
@@ -494,7 +502,9 @@
   "bar.workspaces.numbered_active_indicator": "highlight",
   "theme.bar.buttons.systray.enableBorder": false,
   "theme.bar.buttons.modules.weather.enableBorder": false,
-  "bar.customModules.worldclock.tz": ["Asia/Kolkata"],
+  "bar.customModules.worldclock.tz": [
+    "Asia/Kolkata"
+  ],
   "menus.clock.weather.key": "842a5e92b86a4ffc933171516250706",
   "theme.osd.scaling": 80,
   "theme.bar.menus.menu.bluetooth.scaling": 80,
@@ -536,4 +546,3 @@
   "theme.bar.buttons.workspaces.numbered_inactive_padding": "1em",
   "bar.launcher.icon": ""
 }
-
