@@ -101,10 +101,11 @@ zinit snippet OMZP::git
 # -------------- #
 export PATH="$PATH:~/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
-# export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.local/share/cargo/bin"
 export PATH="$PATH:$HOME/.local/share/go/bin"
 export PATH="$PATH:$HOME/.config/emacs/bin"
+export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
 
 export MANPAGER='nvim +Man!'
 export VISUAL=nvim
@@ -212,15 +213,12 @@ function nvims() {
 }
 
 # keybinds
-bindkey -e
+bindkey -v
 bindkey -s ^a "nvims\n"
-bindkey "^p" history-search-backward
-bindkey "^n" history-search-forward
-# . "/home/shubham/.deno/env"
 
 export PATH=$PATH:/home/shubham/.spicetify
 
 # uv python
 . "$HOME/.local/share/../bin/env"
 eval "$(uv generate-shell-completion zsh)"
-export PATH="/home/shubham/.config/herd-lite/bin:$PATH"
+
