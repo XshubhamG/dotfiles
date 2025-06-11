@@ -18,7 +18,7 @@ export CARGO_HOME=${CARGO_HOME:="$XDG_DATA_HOME/cargo"}
 export DOCKER_CONFIG=${DOCKER_CONFIG:="$XDG_CONFIG_HOME/docker"}
 export GOPATH=${GOPATH:="$XDG_DATA_HOME/go"}
 export GTK2_RC_FILES=${GTK2_RC_FILES:="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"}
-export ELECTRON_OZONE_PLATFORM_HINT=wayland
+# export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export XDG_DATA_DIRS=${XDG_DATA_DIRS:="/usr/share/applications"}
 
 # Source zinit
@@ -117,7 +117,7 @@ export PAGER=bat
 # -------------- #
 
 alias vi="neovide"
-alias code="cursor --ozone-platform=wayland &"
+# alias code="cursor --ozone-platform=wayland &"
 alias tldr="tldr --list | fzf-tmux --preview 'tldr {1} --color=always' --preview-window=right,70% | xargs tldr"
 alias lz="lazygit"
 alias rm="trash"
@@ -126,7 +126,7 @@ alias tnew='tmux new -s "$(basename "$PWD")"'
 alias printalias="alias | fzf"
 alias printenv="printenv | fzf"
 alias ff="pokeget random --hide-name | fastfetch --file -"
-alias spotify="spotify --ozone-platform=wayland"
+# alias spotify="spotify --ozone-platform=wayland"
 
 # config files
 alias vconfig="vi ~/dotfiles/.config/nvim/"
@@ -147,7 +147,7 @@ alias tmux-attach="tmux attach -t"
 # git alias
 alias gs="git status"
 alias ga="git add"
-alias gc="git commit -m"
+alias gc="git commit"
 alias gp="git push"
 alias gp="git push"
 alias gl="git log"

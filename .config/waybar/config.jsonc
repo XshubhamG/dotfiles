@@ -6,33 +6,31 @@
   "margin-right": 5,
   "spacing": 4,
   "height": 28,
-  "modules-left": ["hyprland/window"],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock", "custom/spotify"],
   "modules-right": [
-    "tray",
+    "pulseaudio",
+    "network",
     "bluetooth",
     "memory",
-    "network",
-    "backlight",
-    "pulseaudio",
     "battery",
-    "custom/power",
+    "custom/notifications",
   ],
 
-  "hyprland/window": {
-    "format": "  {}",
-    "separate-outputs": true,
-    "rewrite": {
-      "(.*)Brave": "$1 ",
-      "(.*) - Visual Studio Code": "$1 󰨞",
-      "(.*) — Thunar": "$1 󰉋",
-      "(.*)Spotify.*": "$1 Spotify 󰓇",
-      "(.*) - Discord": "$1  ",
-      "(.*?)-\\s*YouTube(.*)": "$1󰗃 ",
-      "(.*?\\s)YouTube(.*)": "$1YouTube 󰗃 ",
-    },
-    "max-length": 50,
-  },
+  // "hyprland/window": {
+  //   "format": "  {}",
+  //   "separate-outputs": true,
+  //   "rewrite": {
+  //     "(.*)Brave": "$1 ",
+  //     "(.*) - Visual Studio Code": "$1 󰨞",
+  //     "(.*) — Thunar": "$1 󰉋",
+  //     "(.*)Spotify.*": "$1 Spotify 󰓇",
+  //     "(.*) - Discord": "$1  ",
+  //     "(.*?)-\\s*YouTube(.*)": "$1󰗃 ",
+  //     "(.*?\\s)YouTube(.*)": "$1YouTube 󰗃 ",
+  //   },
+  //   "max-length": 50,
+  // },
 
   "backlight": {
     "format": "{percent}% {icon}",
@@ -50,12 +48,16 @@
       "3": [],
       "4": [],
       "5": [],
+      "6": [],
     },
     "format": "{icon}",
     "format-icons": {
-      "active": "<span font='12'>󰮯</span>",
-      "empty": "<span font='8'></span>",
-      "persistent": "󰊠",
+      "1": "󰄛",
+      "2": "",
+      "3": "",
+      "4": "󰓇",
+      "5": "",
+      "6": "",
     },
   },
 
@@ -70,9 +72,9 @@
     "format": "{icon} {status}",
     "format-connected": "{icon} {device_alias}",
     "format-icons": {
-      "on": "󰂳 ",
-      "off": "󰂲 ",
-      "connected": "󰂳 ",
+      "on": "󰂳",
+      "off": "󰂲",
+      "connected": "󰂳",
     },
     "on-click": "blueman-manager",
     "tooltip": false,
@@ -90,7 +92,7 @@
 
   "network": {
     "format-wifi": "{icon} {essid}",
-    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format-ethernet": "󰀂 ",
     "format-disconnected": "󰖪  {ifname}",
     "on-click": "nm-applet",
@@ -100,12 +102,12 @@
 
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-bluetooth": "󰂰 {volume}%",
+    "format-bluetooth": "󰂰{volume}%",
     "nospacing": 1,
-    "format-muted": "󰝟 ",
+    "format-muted": "󰝟",
     "format-icons": {
-      "headphone": " ",
-      "default": ["󰖀", "󰕾 ", " "],
+      "headphone": "",
+      "default": ["󰖀", "󰕾", ""],
     },
     "on-click": "pavucontrol -t 3",
     "scroll-step": 1,
@@ -145,5 +147,20 @@
     "exec": "$WCM_PATH/swaync",
     "on-click": "swaync-client -t",
     "return-type": "json",
+  },
+
+  "custom/spotify": {
+    "format": "{icon} {}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    "interval": 30, // Remove this if your script is endless and write in loop
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "killall spotify",
+    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl -p spotify next",
+    "on-scroll-down": "playerctl -p spotify previous",
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+    "exec-if": "pgrep spotify",
   },
 }
