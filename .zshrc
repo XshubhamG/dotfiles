@@ -127,6 +127,7 @@ alias printalias="alias | fzf"
 alias printenv="printenv | fzf"
 alias ff="pokeget random --hide-name | fastfetch --file -"
 # alias spotify="spotify --ozone-platform=wayland"
+alias rel="xrdb merge ~/.Xresources && kill -USR1 $(pidof st)"
 
 # config files
 alias vconfig="vi ~/dotfiles/.config/nvim/"
