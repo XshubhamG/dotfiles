@@ -42,8 +42,8 @@ return {
       doc = {
         float = true,
         inline = false,
-        max_width = 60,
-        max_height = 30,
+        max_width = 80,
+        max_height = 40,
         wo = {
           wrap = true,
         },

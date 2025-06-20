@@ -1,15 +1,18 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 add_newline = true
 
+command_timeout = 1000
+
 format = """
-[](surface0)\
 $os\
 $username\
-[](bg:peach fg:surface0)\
 $directory\
-[](fg:peach bg:green)\
 $git_branch\
+$git_commit\
 $git_status\
-[](fg:green bg:teal)\
+$git_metrics\
+$git_state\
 $c\
 $rust\
 $golang\
@@ -19,16 +22,23 @@ $java\
 $kotlin\
 $haskell\
 $python\
-$lua\
-[](fg:teal bg:blue)\
+$package\
 $docker_context\
-[](fg:blue bg:purple)\
+$kubernetes\
+$shell\
+$container\
+$jobs\
+${custom.memory_usage}\
+$battery\
+${custom.keyboard_layout}\
 $time\
-[ ](fg:purple)\
-$line_break$character"""
+$cmd_duration\
+$status\
+$line_break\
+$character\
+"""
 
 palette = 'catppuccin_mocha'
-
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -59,8 +69,9 @@ mantle = "#181825"
 crust = "#11111b"
 
 [os]
-disabled = false
-style = "bg:surface0 fg:text"
+disabled = true
+style = "fg:blue"            # Changed to catppuccin_mocha red
+format = '[$symbol]($style)'
 
 [os.symbols]
 Windows = "󰍲"
@@ -68,7 +79,7 @@ Ubuntu = "󰕈"
 SUSE = ""
 Raspbian = "󰐿"
 Mint = "󰣭"
-Macos = ""
+Macos = "󰀵"
 Manjaro = ""
 Linux = "󰌽"
 Gentoo = "󰣨"
@@ -76,102 +87,250 @@ Fedora = "󰣛"
 Alpine = ""
 Amazon = ""
 Android = ""
-Arch = ""
+Arch = "󰣇"
 Artix = "󰣇"
+EndeavourOS = ""
 CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+Pop = ""
 
 [username]
 show_always = true
-style_user = "bg:surface0 fg:text"
-style_root = "bg:surface0 fg:text"
+style_user = "fg:blue"
+style_root = "bold fg:maroon"
 format = '[ $user ]($style)'
+disabled = true
 
 [directory]
-style = "fg:mantle bg:peach"
+style = "fg:green"
+read_only_style = "fg:green"
+repo_root_style = "bold fg:green"
 format = "[ $path ]($style)"
-truncation_length = 1
-truncation_symbol = " "
+read_only = " "
 home_symbol = " Home"
+truncation_symbol = " "
+truncation_length = 1
+truncate_to_repo = true
+fish_style_pwd_dir_length = 0
+use_logical_path = false
 
 [directory.substitutions]
-"Documents" = "󰈙 Documents"
-"Downloads" = " Downloads"
-"Music" = "󰝚 Music"
-"Pictures" = "  Pictures"
-"code" = "󰲋  code"
+"Documents" = " 󰈙 "
+"Downloads" = "  "
+"Music" = " 󰝚 "
+"Pictures" = "  "
+"code" = " 󰲋 "
 
 [git_branch]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+style = "fg:sky"
+format = '( [$symbol $branch]($style) )'
+only_attached = true
+ignore_branches = []
+truncation_length = 25
+truncation_symbol = "..."
+always_show_remote = false
+disabled = false
+
+[git_commit]
+style = "fg:sky"                        # Changed to catppuccin_mocha sky
+format = "( [($tag)(@$hash)]($style) )"
+commit_hash_length = 7
+only_detached = true
+tag_symbol = "󰓼 "
+tag_disabled = false
+disabled = false
 
 [git_status]
-style = "bg:teal"
-format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+style = "fg:sky"                                              # Changed to catppuccin_mocha sky
+format = '([$ahead_behind]($style) )([$all_status]($style) )'
+stashed = "*${count}"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+up_to_date = ""
+diverged = "⇡${ahead_count}⇣${behind_count}"
+conflicted = "=${count}"
+deleted = "×${count}"
+renamed = "»${count}"
+modified = "!${count}"
+staged = "+${count}"
+untracked = "?${count}"
+ignore_submodules = false
+disabled = false
+
+[git_metrics]
+format = '([([+$added]($added_style))([-$deleted]($deleted_style))](fg:sky) )' # Changed to catppuccin_mocha sky
+added_style = "fg:green"                                                       # Changed to catppuccin_mocha green
+deleted_style = "fg:red"                                                       # Changed to catppuccin_mocha red
+only_nonzero_diffs = true
+disabled = false
+
+[git_state]
+style = "fg:red"                                                        # Changed to catppuccin_mocha red
+format = '([$state( $progress_current/$progress_total)]($style bold) )'
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+disabled = false
 
 [nodejs]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "fg:green"                          # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)]($style) )'
 
 [c]
-symbol = " "
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "fg:blue"                           # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)]($style) )'
 
 [rust]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = "󱘗"
+style = "fg:maroon"                         # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)]($style) )'
 
 [golang]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = "󰟓"
+style = "fg:sapphire"                       # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)]($style) )'
 
 [php]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "fg:maroon"                         # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)]($style) )'
 
 [java]
-symbol = " "
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "fg:blue"                           # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)]($style) )'
 
 [kotlin]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "fg:blue"                           # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)]($style) )'
 
 [haskell]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "fg:blue"                           # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)]($style) )'
 
 [python]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "fg:blue"                                         # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)( $virtualenv)]($style) )'
+version_format = '${raw}'
 
-[lua]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+[package]
+disabled = false
+symbol = "󰏗"
+style = "fg:blue"                           # Changed to catppuccin_mocha blue
+format = '( [$symbol( $version)]($style) )'
 
 [docker_context]
 symbol = ""
-style = "bg:mantle"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+style = "fg:sapphire"                       # Changed to catppuccin_mocha sapphire
+format = '( [$symbol( $context)]($style) )'
+
+[kubernetes]
+symbol = "󱃾"
+style = "fg:lavender"                         # Changed to catppuccin_mocha lavender
+format = '( [($symbol( $cluster))]($style) )'
+disabled = false
+
+[shell]
+disabled = false
+format = '[  $indicator ]($style)'
+bash_indicator = "bash"
+fish_indicator = "fish"
+zsh_indicator = "zsh"
+powershell_indicator = "powershell"
+pwsh_indicator = "pwsh"
+ion_indicator = "ion"
+elvish_indicator = "elvish"
+tcsh_indicator = "tcsh"
+xonsh_indicator = "xonsh"
+cmd_indicator = "cmd"
+nu_indicator = "nu"
+unknown_indicator = ""
+style = "fg:lavender"               # Changed to catppuccin_mocha text
+
+[container]
+style = "fg:text"                      # Changed to catppuccin_mocha text
+format = '( [$symbol $name]($style) )'
+
+[jobs]
+symbol = "󰒋"
+style = "fg:subtext0"                      # Changed to catppuccin_mocha subtext0
+format = '( [$symbol( $number)]($style) )'
+symbol_threshold = 1
+number_threshold = 1
+
+[custom.memory_usage]
+command = "starship module memory_usage"
+when = '[ "${STARSHIP_COCKPIT_MEMORY_USAGE_ENABLED:-false}" = "true" ]'
+shell = "sh"
+format = "( $output )"
+disabled = false
+
+[memory_usage]
+threshold = 0
+symbol = "󰓅"
+style = "fg:subtext0"                     # Changed to catppuccin_mocha subtext0
+format = '( [$symbol( ${ram})]($style) )'
+disabled = false
+
+[battery]
+full_symbol = "󰁹"
+charging_symbol = "󰂄"
+discharging_symbol = "󰂃"
+unknown_symbol = "󰂑"
+empty_symbol = "󰂎"
+format = '( [$symbol( $percentage)]($style) )'
+disabled = false
+
+[[battery.display]]
+threshold = 10
+style = "bold fg:red" # Changed to catppuccin_mocha red
+
+[[battery.display]]
+threshold = 20
+style = "fg:peach" # Changed to catppuccin_mocha peach
+
+[[battery.display]]
+threshold = 100
+style = "fg:yellow" # Changed to catppuccin_mocha subtext0
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:peach"
-format = '[[  $time ](fg:mantle bg:purple)]($style)'
+style = "fg:overlay1"            # Changed to catppuccin_mocha overlay1
+format = '( [󰔛 $time]($style) )'
+
+[cmd_duration]
+min_time = 2000
+format = '( [󱫑 $duration]($style) )'
+style = 'fg:overlay1'                # Changed to catppuccin_mocha overlay1
+show_milliseconds = false
+disabled = false
+
+[status]
+disabled = false
+format = '( [$symbol( $common_meaning)( $signal_name)]($style) )'
+map_symbol = true
+pipestatus = true
+symbol = '󰅙'
+success_symbol = ''
+not_executable_symbol = '󰂭'
+not_found_symbol = '󰍉'
+sigint_symbol = '󰐊'
+signal_symbol = '󱐋'
+style = 'bold fg:red'                                             # Changed to catppuccin_mocha red
+recognize_signal_code = true
 
 [line_break]
 disabled = false
@@ -185,11 +344,27 @@ vimcmd_replace_one_symbol = '[ ](bold fg:purple)'
 vimcmd_replace_symbol = '[ ](bold fg:purple)'
 vimcmd_visual_symbol = '[ ](bold fg:yellow)'
 
-[battery]
-full_symbol = " "
-charging_symbol = "⚡️"
-discharging_symbol = "󰂃 "
+[custom.keyboard_layout]
+command = """
 
-[[battery.display]]
-threshold = 20
-style = "bold red"
+# Set env variables if you want to use layout aliases (in uppercase)
+#     export STARSHIP_COCKPIT_KEYBOARD_LAYOUT_ABC=ENG
+#     export STARSHIP_COCKPIT_KEYBOARD_LAYOUT_UKRAINIAN=UKR
+#
+# Implementations:
+#     macOS
+
+if [ "$(uname -s)" = "Darwin" ]; then
+      input_source=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurrentKeyboardLayoutInputSourceID)
+      layout_id=$(echo "$input_source" | cut -d '.' -f4)
+      layout=$(printenv "STARSHIP_COCKPIT_KEYBOARD_LAYOUT_$(echo "$layout_id" | tr '[:lower:]' '[:upper:]')")
+      echo "$layout" || echo "$layout_id"
+fi
+
+"""
+symbol = "󰌌"
+style = "fg:subtext0" # Changed to catppuccin_mocha subtext0
+format = '( [$symbol $output]($style) )'
+when = '[ "${STARSHIP_COCKPIT_KEYBOARD_LAYOUT_ENABLED:-false}" = "true" ]'
+shell = "sh"
+disabled = false
