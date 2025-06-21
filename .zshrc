@@ -120,7 +120,7 @@ alias vi="neovide"
 # alias code="cursor --ozone-platform=wayland &"
 alias tldr="tldr --list | fzf-tmux --preview 'tldr {1} --color=always' --preview-window=right,70% | xargs tldr"
 alias lz="lazygit"
-alias rm="trash"
+alias rm="trash -v"
 alias ncdu="ncdu --color dark"
 alias tnew='tmux new -s "$(basename "$PWD")"'
 alias printalias="alias | fzf"
