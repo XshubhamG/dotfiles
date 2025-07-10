@@ -2,6 +2,7 @@
 \.gitignore
 \.stow-local-ignore
 LICENSE
+package_list
 README.md
 vscode.json
 ^/.*/.bak

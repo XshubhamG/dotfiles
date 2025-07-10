@@ -30,7 +30,6 @@ $container\
 $jobs\
 ${custom.memory_usage}\
 $battery\
-${custom.keyboard_layout}\
 $time\
 $cmd_duration\
 $status\
@@ -68,34 +67,6 @@ base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
 
-[os]
-disabled = true
-style = "fg:blue"            # Changed to catppuccin_mocha red
-format = '[$symbol]($style)'
-
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-EndeavourOS = ""
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
-
 [username]
 show_always = true
 style_user = "fg:blue"
@@ -109,7 +80,7 @@ read_only_style = "fg:green"
 repo_root_style = "bold fg:green"
 format = "[ $path ]($style)"
 read_only = " "
-home_symbol = " Home"
+home_symbol = " "
 truncation_symbol = " "
 truncation_length = 1
 truncate_to_repo = true
@@ -122,6 +93,7 @@ use_logical_path = false
 "Music" = " 󰝚 "
 "Pictures" = "  "
 "code" = " 󰲋 "
+"git" = " 󰊤 "
 
 [git_branch]
 symbol = ""
@@ -135,7 +107,7 @@ always_show_remote = false
 disabled = false
 
 [git_commit]
-style = "fg:sky"                        # Changed to catppuccin_mocha sky
+style = "fg:sky"
 format = "( [($tag)(@$hash)]($style) )"
 commit_hash_length = 7
 only_detached = true
@@ -144,7 +116,7 @@ tag_disabled = false
 disabled = false
 
 [git_status]
-style = "fg:sky"                                              # Changed to catppuccin_mocha sky
+style = "fg:sky"
 format = '([$ahead_behind]($style) )([$all_status]($style) )'
 stashed = "*${count}"
 ahead = "⇡${count}"
@@ -161,14 +133,14 @@ ignore_submodules = false
 disabled = false
 
 [git_metrics]
-format = '([([+$added]($added_style))([-$deleted]($deleted_style))](fg:sky) )' # Changed to catppuccin_mocha sky
-added_style = "fg:green"                                                       # Changed to catppuccin_mocha green
-deleted_style = "fg:red"                                                       # Changed to catppuccin_mocha red
+format = '([([+$added]($added_style))([-$deleted]($deleted_style))](fg:sky) )'
+added_style = "fg:green"
+deleted_style = "fg:red"
 only_nonzero_diffs = true
 disabled = false
 
 [git_state]
-style = "fg:red"                                                        # Changed to catppuccin_mocha red
+style = "fg:red"
 format = '([$state( $progress_current/$progress_total)]($style bold) )'
 rebase = "REBASING"
 merge = "MERGING"
@@ -181,64 +153,63 @@ disabled = false
 
 [nodejs]
 symbol = ""
-style = "fg:green"                          # Changed to catppuccin_mocha blue
+style = "fg:green"
 format = '( [$symbol( $version)]($style) )'
 
 [c]
 symbol = ""
-style = "fg:blue"                           # Changed to catppuccin_mocha blue
+style = "fg:blue"
 format = '( [$symbol( $version)]($style) )'
 
 [rust]
 symbol = "󱘗"
-style = "fg:maroon"                         # Changed to catppuccin_mocha blue
+style = "fg:maroon"
 format = '( [$symbol( $version)]($style) )'
 
 [golang]
 symbol = "󰟓"
-style = "fg:sapphire"                       # Changed to catppuccin_mocha blue
+style = "fg:sapphire"
 format = '( [$symbol( $version)]($style) )'
 
 [php]
 symbol = ""
-style = "fg:maroon"                         # Changed to catppuccin_mocha blue
+style = "fg:maroon"
 format = '( [$symbol( $version)]($style) )'
 
 [java]
 symbol = ""
-style = "fg:blue"                           # Changed to catppuccin_mocha blue
+style = "fg:blue"
 format = '( [$symbol( $version)]($style) )'
 
 [kotlin]
-symbol = ""
-style = "fg:blue"                           # Changed to catppuccin_mocha blue
+style = "fg:blue"
 format = '( [$symbol( $version)]($style) )'
 
 [haskell]
 symbol = ""
-style = "fg:blue"                           # Changed to catppuccin_mocha blue
+style = "fg:blue"
 format = '( [$symbol( $version)]($style) )'
 
 [python]
 symbol = ""
-style = "fg:blue"                                         # Changed to catppuccin_mocha blue
+style = "fg:blue"
 format = '( [$symbol( $version)( $virtualenv)]($style) )'
 version_format = '${raw}'
 
 [package]
 disabled = false
 symbol = "󰏗"
-style = "fg:blue"                           # Changed to catppuccin_mocha blue
+style = "fg:blue"
 format = '( [$symbol( $version)]($style) )'
 
 [docker_context]
 symbol = ""
-style = "fg:sapphire"                       # Changed to catppuccin_mocha sapphire
+style = "fg:sapphire"
 format = '( [$symbol( $context)]($style) )'
 
 [kubernetes]
 symbol = "󱃾"
-style = "fg:lavender"                         # Changed to catppuccin_mocha lavender
+style = "fg:lavender"
 format = '( [($symbol( $cluster))]($style) )'
 disabled = false
 
@@ -257,15 +228,15 @@ xonsh_indicator = "xonsh"
 cmd_indicator = "cmd"
 nu_indicator = "nu"
 unknown_indicator = ""
-style = "fg:lavender"               # Changed to catppuccin_mocha text
+style = "fg:lavender"
 
 [container]
-style = "fg:text"                      # Changed to catppuccin_mocha text
+style = "fg:text"
 format = '( [$symbol $name]($style) )'
 
 [jobs]
 symbol = "󰒋"
-style = "fg:subtext0"                      # Changed to catppuccin_mocha subtext0
+style = "fg:subtext0"
 format = '( [$symbol( $number)]($style) )'
 symbol_threshold = 1
 number_threshold = 1
@@ -280,7 +251,7 @@ disabled = false
 [memory_usage]
 threshold = 0
 symbol = "󰓅"
-style = "fg:subtext0"                     # Changed to catppuccin_mocha subtext0
+style = "fg:subtext0"
 format = '( [$symbol( ${ram})]($style) )'
 disabled = false
 
@@ -295,26 +266,26 @@ disabled = false
 
 [[battery.display]]
 threshold = 10
-style = "bold fg:red" # Changed to catppuccin_mocha red
+style = "bold fg:red"
 
 [[battery.display]]
 threshold = 20
-style = "fg:peach" # Changed to catppuccin_mocha peach
+style = "fg:peach"
 
 [[battery.display]]
 threshold = 100
-style = "fg:yellow" # Changed to catppuccin_mocha subtext0
+style = "fg:yellow"
 
 [time]
 disabled = false
 time_format = "%R"
-style = "fg:overlay1"            # Changed to catppuccin_mocha overlay1
+style = "fg:overlay1"
 format = '( [󰔛 $time]($style) )'
 
 [cmd_duration]
 min_time = 2000
 format = '( [󱫑 $duration]($style) )'
-style = 'fg:overlay1'                # Changed to catppuccin_mocha overlay1
+style = 'fg:overlay1'
 show_milliseconds = false
 disabled = false
 
@@ -323,48 +294,14 @@ disabled = false
 format = '( [$symbol( $common_meaning)( $signal_name)]($style) )'
 map_symbol = true
 pipestatus = true
-symbol = '󰅙'
+symbol = ''
 success_symbol = ''
 not_executable_symbol = '󰂭'
 not_found_symbol = '󰍉'
 sigint_symbol = '󰐊'
 signal_symbol = '󱐋'
-style = 'bold fg:red'                                             # Changed to catppuccin_mocha red
+style = 'bold fg:red'
 recognize_signal_code = true
 
 [line_break]
-disabled = false
-
-[character]
-disabled = false
-success_symbol = '[ ](bold fg:green)'
-error_symbol = '[✘ ](bold fg:red)'
-vimcmd_symbol = '[ ](bold fg:creen)'
-vimcmd_replace_one_symbol = '[ ](bold fg:purple)'
-vimcmd_replace_symbol = '[ ](bold fg:purple)'
-vimcmd_visual_symbol = '[ ](bold fg:yellow)'
-
-[custom.keyboard_layout]
-command = """
-
-# Set env variables if you want to use layout aliases (in uppercase)
-#     export STARSHIP_COCKPIT_KEYBOARD_LAYOUT_ABC=ENG
-#     export STARSHIP_COCKPIT_KEYBOARD_LAYOUT_UKRAINIAN=UKR
-#
-# Implementations:
-#     macOS
-
-if [ "$(uname -s)" = "Darwin" ]; then
-      input_source=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurrentKeyboardLayoutInputSourceID)
-      layout_id=$(echo "$input_source" | cut -d '.' -f4)
-      layout=$(printenv "STARSHIP_COCKPIT_KEYBOARD_LAYOUT_$(echo "$layout_id" | tr '[:lower:]' '[:upper:]')")
-      echo "$layout" || echo "$layout_id"
-fi
-
-"""
-symbol = "󰌌"
-style = "fg:subtext0" # Changed to catppuccin_mocha subtext0
-format = '( [$symbol $output]($style) )'
-when = '[ "${STARSHIP_COCKPIT_KEYBOARD_LAYOUT_ENABLED:-false}" = "true" ]'
-shell = "sh"
 disabled = false
