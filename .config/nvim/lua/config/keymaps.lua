@@ -5,8 +5,10 @@
 -- Keymaps
 local keymap = vim.keymap -- for consciseness
 
-keymap.set("v", "<C-j>", ":m '<-2<CR>gv=gv", { desc = "Move selected line(s) up" })
-keymap.set("v", "<C-k>", ":m '>+1<CR>gv=gv", { desc = "Move selected line(s) down" })
+keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected line(s) down" })
+keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selected line(s) up" })
 
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })

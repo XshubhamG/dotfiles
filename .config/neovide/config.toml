@@ -2,5 +2,5 @@ fork = true
 frame = "full"
 
 [font]
-normal = ["Dank Mono"]
-size = 14.0
+normal = ["JetBrainsMono Nerd Font"]
+size = 15.0
