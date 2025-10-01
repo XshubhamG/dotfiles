@@ -55,7 +55,7 @@ setopt menucomplete
 # -------------- #
 # Zstyle command #
 # -------------- #
-# setopt no_list_ambiguous
+setopt no_list_ambiguous
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*:descriptions' format '[%d]'
@@ -65,7 +65,7 @@ zstyle ':completion:*' matcher-list \
 		'+r:|[._-]=* r:|=*' \
 		'+l:|=*'
 zstyle ':vcs_info:*' formats ' %B%s-[%F{magenta}%f %F{yellow}%b%f]-'
-zstyle ':fzf-tab:*' fzf-flags --style=full --height=50% --pointer '» ' \
+zstyle ':fzf-tab:*' fzf-flags --height=50% --pointer '» ' \
                 --color 'pointer:green:bold,bg+:-1:,fg+:green:bold,info:blue:bold,marker:yellow:bold,hl:gray:bold,hl+:yellow:bold' \
                 --input-label ' Search ' --color 'input-border:blue,input-label:blue:bold' \
                 --list-label ' Results ' --color 'list-border:green,list-label:green:bold' \
@@ -221,4 +221,7 @@ export PATH=$PATH:/home/shubham/.spicetify
 # uv python
 . "$HOME/.local/share/../bin/env"
 eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
 
+export PATH=/home/shubham/.local/share/../bin:/home/shubham/.bun/bin:/usr/lib/jvm/java-24-openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:/home/shubham/.cargo/bin:/home/shubham/.local/share/cargo/bin:/home/shubham/.local/share/go/bin:/home/shubham/.config/emacs/bin:/home/shubham/.fzf/bin:/home/shubham/.spicetify:/home/shubham/.jiotv_go/bin:/home/shubham/.jiotv_go/bin
+export PATH=/home/shubham/.local/share/../bin:/home/shubham/.bun/bin:/usr/lib/jvm/java-24-openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/shubham/.local/bin:/home/shubham/.cargo/bin:/home/shubham/.local/share/cargo/bin:/home/shubham/.local/share/go/bin:/home/shubham/.config/emacs/bin:/home/shubham/.fzf/bin:/home/shubham/.spicetify:/home/shubham/.jiotv_go/bin:/home/shubham/.jiotv_go/bin:/home/shubham/.jiotv_go/bin:/home/shubham/.jiotv_go/bin

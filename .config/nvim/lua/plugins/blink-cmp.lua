@@ -17,7 +17,7 @@ return {
       version = not vim.g.lazyvim_blink_main and "*",
     },
   },
-  event = "InsertEnter",
+  event = { "InsertEnter", "CmdlineEnter" },
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
@@ -69,22 +69,15 @@ return {
 
     cmdline = {
       enabled = true,
-
-      sources = function()
-        local type = vim.fn.getcmdtype()
-        -- Search forward and backward
-        if type == "/" or type == "?" then
-          return { "buffer" }
-        end
-        -- Commands
-        if type == ":" or type == "@" then
-          return { "cmdline" }
-        end
-        return {}
-      end,
-
+      keymap = { preset = "cmdline" },
       completion = {
-        menu = { auto_show = true },
+        list = { selection = { preselect = false } },
+        menu = {
+          auto_show = function(ctx)
+            return vim.fn.getcmdtype() == ":"
+          end,
+        },
+        ghost_text = { enabled = true },
       },
     },
 
