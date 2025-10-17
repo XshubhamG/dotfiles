@@ -143,6 +143,7 @@ alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # tmux alias
 alias tmux-attach="tmux attach -t"
+tmux source ~/dotfiles/.config/tmux/tmux.conf
 
 # git alias
 alias gs="git status"
@@ -222,6 +223,3 @@ export PATH=$PATH:/home/shubham/.spicetify
 . "$HOME/.local/share/../bin/env"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
-
-export PATH=/home/shubham/.local/share/../bin:/home/shubham/.bun/bin:/usr/lib/jvm/java-24-openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:/home/shubham/.cargo/bin:/home/shubham/.local/share/cargo/bin:/home/shubham/.local/share/go/bin:/home/shubham/.config/emacs/bin:/home/shubham/.fzf/bin:/home/shubham/.spicetify:/home/shubham/.jiotv_go/bin:/home/shubham/.jiotv_go/bin
-export PATH=/home/shubham/.local/share/../bin:/home/shubham/.bun/bin:/usr/lib/jvm/java-24-openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/shubham/.local/bin:/home/shubham/.cargo/bin:/home/shubham/.local/share/cargo/bin:/home/shubham/.local/share/go/bin:/home/shubham/.config/emacs/bin:/home/shubham/.fzf/bin:/home/shubham/.spicetify:/home/shubham/.jiotv_go/bin:/home/shubham/.jiotv_go/bin:/home/shubham/.jiotv_go/bin:/home/shubham/.jiotv_go/bin
