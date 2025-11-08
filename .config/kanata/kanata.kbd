@@ -1,7 +1,8 @@
 ;; Kanata configuration for capslock to esc/ctrl
+(defcfg)
 
 (defsrc
-  caps
+  caps rsft
 )
 
 (defalias
@@ -9,5 +10,5 @@
 )
 
 (deflayer base
-    @escctrl
+    @escctrl ret
 )
